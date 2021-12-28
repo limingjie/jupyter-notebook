@@ -380,8 +380,12 @@
     
 
     
-    \hypertarget{ux590dux4e60ux77e5ux8bc6ux70b9}{%
-\section{复习知识点}\label{ux590dux4e60ux77e5ux8bc6ux70b9}}
+    \hypertarget{python-ux590dux4e60ux77e5ux8bc6ux70b9}{%
+\section{Python
+复习知识点}\label{python-ux590dux4e60ux77e5ux8bc6ux70b9}}
+
+\hypertarget{ux77e5ux8bc6ux70b9}{%
+\subsection{知识点}\label{ux77e5ux8bc6ux70b9}}
 
 \begin{itemize}
 \tightlist
@@ -1153,23 +1157,145 @@ WoW
 \end{longtable}
 
     \begin{itemize}
-\tightlist
 \item
   16.
   循环语句中可迭代的结构：range、字符串、列表、元组、集合、字典、文件
+
+  \begin{itemize}
+  \item
+    range 类型表示不可变的数字序列，通常用于在 for
+    循环中循环指定的次数。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{range}\NormalTok{(stop)}
+\BuiltInTok{range}\NormalTok{(start, stop[, step])}
+\end{Highlighting}
+\end{Shaded}
+  \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{28}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0, 1, 2, 3, 4]
+[1, 2, 3, 4]
+[0, 5, 10, 15, 20, 25]
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{29}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0 1 2 3 4
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{c} \PY{o+ow}{in} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{string}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{end} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+s t r i n g
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{l}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+one
+two
+three
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{32}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{k}\PY{p}{,} \PY{n}{v} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{v}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+1 one
+2 two
+3 three
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   17. 列表操作的方法
 
   \begin{itemize}
   \tightlist
   \item
-    append()
+    \texttt{append(x)} - 在列表末尾添加一个元素。
   \item
-    pop()
+    \texttt{pop({[}i{]})} -
+    删除列表中指定位置的元素，并返回被删除的元素。未指定位置时，a.pop()
+    删除并返回列表的最后一个元素。
   \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{33}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fruits} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{orange}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{apple}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{banana}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{kiwi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{apple}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{banana}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{fruits}\PY{p}{)}
+\PY{n}{fruits}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mongo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 追加一个元素}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{fruits}\PY{p}{)}
+\PY{n}{fruits}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 删除第五个元素 banana}
+\PY{n}{fruits}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 删除第五个元素 kiwi}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{fruits}\PY{p}{)}
+\PY{n}{fruits}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}   \PY{c+c1}{\PYZsh{} 删除最后一个元素 mongo}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{fruits}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'mongo']
+['orange', 'apple', 'pear', 'apple', 'banana', 'mongo']
+['orange', 'apple', 'pear', 'apple', 'banana']
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   18.
   列表的排序方法\texttt{sort()}以及内置函数\texttt{sorted()}的应用场合、语法、排序规则的指定（lambda函数）、返回值等
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{34}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} TODO}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{itemize}
+\tightlist
 \item
   19. 元组的非正规写法
 
@@ -1180,6 +1306,29 @@ WoW
   \item
     两变量值交换
   \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{35}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} 多变量赋值}
+\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{)}\PY{p}{,} \PY{n}{e} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{9}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 两变量值交换}
+\PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{world}\PY{l+s+s1}{\PYZsq{}}
+\PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{y}\PY{p}{,} \PY{n}{x}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+1, 3, 5, 7, 9
+world hello
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   20. 元组的基本要求和操作
 
@@ -1191,12 +1340,106 @@ WoW
 \item
   21. 集合运算符：\texttt{\&}, \texttt{\textbar{}},
   \texttt{-}（只要求能读懂程序）
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{36}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{girls} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Adele}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lady Gaga}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G.E.M}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n}{boys} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jay Zhou}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Ed Sheeran}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Justin Bieber}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n}{chinese} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G.E.M}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jay Zhou}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n}{singers} \PY{o}{=} \PY{n}{girls} \PY{o}{|} \PY{n}{boys}
+\PY{n}{chineseBoys} \PY{o}{=} \PY{n}{chinese} \PY{o}{\PYZam{}} \PY{n}{boys}
+\PY{n}{foreignGirls} \PY{o}{=} \PY{n}{girls} \PY{o}{\PYZhy{}} \PY{n}{chinese}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{singers}\PY{p}{,} \PY{n}{chineseBoys}\PY{p}{,} \PY{n}{foreignGirls}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'Lady Gaga', 'G.E.M', 'Jay Zhou', 'Justin Bieber', 'Adele', 'Ed Sheeran'\}
+\{'Jay Zhou'\}
+\{'Lady Gaga', 'Adele'\}
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   22. 集合操作的方法：\texttt{add()}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{37}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{girls} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Adele}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lady Gaga}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{G.E.M}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n}{girls}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{WanTing}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{girls}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'Lady Gaga', 'WanTing', 'Adele', 'G.E.M'\}
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   23. 集合的去除重复工作
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{38}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{l} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello world, my girl!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 顺序无关}
+\PY{n}{unique} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{set}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{unique}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 顺序有关}
+\PY{n}{unique} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{n}{seen} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{)}
+\PY{k}{for} \PY{n}{e} \PY{o+ow}{in} \PY{n}{l}\PY{p}{:}
+    \PY{k}{if} \PY{n}{e} \PY{o+ow}{in} \PY{n}{seen}\PY{p}{:}
+        \PY{k}{continue}
+    \PY{k}{else}\PY{p}{:}
+        \PY{n}{unique}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{e}\PY{p}{)}
+        \PY{n}{seen}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{n}{e}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{unique}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['y', 'd', 'm', 'g', 'l', ',', 'w', 'H', 'i', 'r', ' ', '!', 'e', 'o']
+['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   24. 字典添加新的键值对
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{39}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{d} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whale}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shark}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{python}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{9} \PY{c+c1}{\PYZsh{} Add 1}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+\PY{n}{d}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shrimp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{10000}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{kraken}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{serpant}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{2}\PY{p}{\PYZcb{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} Add many}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'whale': 5, 'shark': 3\}
+\{'whale': 5, 'shark': 3, 'python': 9\}
+\{'whale': 5, 'shark': 3, 'python': 9, 'shrimp': 10000, 'kraken': 1, 'serpant':
+2\}
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   25. 字典中键、值、键值对的获取 \texttt{keys()}, \texttt{values()},
   \texttt{items()}
@@ -1208,13 +1451,114 @@ WoW
   \item
     能够用字典描述特定键值对类型的应用并操作
   \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{40}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{d} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whale}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shark}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{python}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{19}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{d}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{k}\PY{p}{)}
+\PY{k}{for} \PY{n}{k}\PY{p}{,} \PY{n}{v} \PY{o+ow}{in} \PY{n}{d}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{the number of }\PY{l+s+si}{\PYZob{}:\PYZlt{}6\PYZcb{}}\PY{l+s+s1}{ = }\PY{l+s+si}{\PYZob{}:\PYZgt{}2\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{v}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+dict\_keys(['whale', 'shark', 'python'])
+dict\_values([5, 3, 19])
+dict\_items([('whale', 5), ('shark', 3), ('python', 19)])
+whale
+shark
+python
+the number of whale  =  5
+the number of shark  =  3
+the number of python = 19
+    \end{Verbatim}
+
+    \begin{itemize}
 \item
   26. 字典的\texttt{get()}方法的作用及使用
+
+  \texttt{get(key{[},\ default{]})} \textgreater{} 如果 key
+  存在于字典中则返回 key 的值，否则返回 default。 如果 default
+  未给出则默认为 None，因而此方法绝不会引发 KeyError。
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{d} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whale}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shark}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{python}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{19}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whale}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} print(d[\PYZsq{}shrimp\PYZsq{}])         \PYZsh{} shrimp 不存在，报错}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{whale}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shrimp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}       \PY{c+c1}{\PYZsh{} shrimp 不存在，不报错}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{shrimp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{999}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} shrimp 不存在，返回默认值}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+5
+5
+None
+999
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   27. 函数定义及简单参数传递
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{42}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} TODO}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{itemize}
+\tightlist
 \item
   28.
   使用pip工具查看当前已安装的Python扩展库的完整命令\texttt{pip\ list}，安装扩展库命令\texttt{pip\ install}库名。
+
+  \begin{itemize}
+  \item
+    pip list
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ pip list}
+\NormalTok{Package              Version}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-} {-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{appdirs              1.4.4}
+\NormalTok{appnope              0.1.2}
+\NormalTok{argon2{-}cffi          21.3.0}
+\NormalTok{argon2{-}cffi{-}bindings 21.2.0}
+\NormalTok{attrs                21.2.0}
+\NormalTok{...}
+\NormalTok{...}
+\end{Highlighting}
+\end{Shaded}
+  \item
+    pip install
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{$ pip install pandas}
+\NormalTok{$ pip install wordcloud}
+\NormalTok{$ pip install jieba}
+\end{Highlighting}
+\end{Shaded}
+  \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
 \item
   29. 文件打开模式：\texttt{r}, \texttt{w}
 \item
@@ -1231,11 +1575,78 @@ WoW
   32. CSV库，json库读写文件操作的基本语法
 \item
   33. 上下文管理器的应用：\texttt{with\ open()\ as\ f:}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
 \item
   34. 第三方库random的方法：\texttt{randint()}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{43}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{random}
+\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\PY{n}{x} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 唯一的闭区间[0, 9]}
+\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}        \PY{c+c1}{\PYZsh{} 同样的seed}
+\PY{n}{y} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 得到同样的随机数}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+9 9
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{44}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{random}
+\PY{n}{cards} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A23456789JQK}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{cards}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{cards}\PY{p}{)}
+\PY{n}{random}\PY{o}{.}\PY{n}{shuffle}\PY{p}{(}\PY{n}{cards}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{cards}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['3', '4', 'K', 'Q', 'J', '2', '7', '8', 'A', '9', '6', '5']
+['9', 'K', '6', '2', '3', '5', 'J', '4', 'A', '7', 'Q', '8']
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   35. 可视化：绘制饼图、直方图、多种折线图、散点图
 \end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{45}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} TODO}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{ux9898ux578b}{%
+\subsection{题型}\label{ux9898ux578b}}
+
+所有选择题和判断题均出自砺儒云平台的课前、课后测试题，只有个别题目做了适当修改
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+\# & 题型 & 分数 \\
+\midrule
+\endhead
+1 & 选择题 & 10x2 \\
+2 & 判断题 & 15x1 \\
+3 & 程序分析题 & 5x5 \\
+4 & 应用题（程序填空） & 10x2 \\
+5 & 思维提升题（问答题） & 2x5 \\
+6 & 应用创新题（编程题） & 1x10 \\
+\bottomrule
+\end{longtable}
 
 
     % Add a bibliography block to the postdoc

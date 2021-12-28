@@ -1,4 +1,6 @@
-# 复习知识点
+# Python 复习知识点
+
+## 知识点
 
 - 1\. Python程序需要**描述数据**和**操作数据**。
 - 2\. Python程序区分大小写
@@ -536,30 +538,316 @@ else:
 | `not x`   | if x is false, then True, else False |
 
 - 16\. 循环语句中可迭代的结构：range、字符串、列表、元组、集合、字典、文件
+
+  - range 类型表示不可变的数字序列，通常用于在 for 循环中循环指定的次数。
+    ```python
+    range(stop)
+    range(start, stop[, step])
+    ```
+
+
+```python
+print(list(range(5)))
+print(list(range(1, 5)))
+print(list(range(0, 30, 5)))
+```
+
+    [0, 1, 2, 3, 4]
+    [1, 2, 3, 4]
+    [0, 5, 10, 15, 20, 25]
+
+
+
+```python
+for n in range(5):
+    print(n, end=' ')
+```
+
+    0 1 2 3 4 
+
+
+```python
+for c in 'string':
+    print(c, end = ' ')
+```
+
+    s t r i n g 
+
+
+```python
+for l in ['one', 'two', 'three']:
+    print(l)
+```
+
+    one
+    two
+    three
+
+
+
+```python
+for k, v in {1:'one', 2:'two', 3:'three'}.items():
+    print(k, v)
+```
+
+    1 one
+    2 two
+    3 three
+
+
 - 17\. 列表操作的方法
-  - append()
-  - pop()
+  - `append(x)` - 在列表末尾添加一个元素。
+  - `pop([i])` - 删除列表中指定位置的元素，并返回被删除的元素。未指定位置时，a.pop() 删除并返回列表的最后一个元素。
+
+
+```python
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+print(fruits)
+fruits.append('mongo')  # 追加一个元素
+print(fruits)
+fruits.pop(3)  # 删除第五个元素 banana
+fruits.pop(3)  # 删除第五个元素 kiwi
+print(fruits)
+fruits.pop()   # 删除最后一个元素 mongo
+print(fruits)
+```
+
+    ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+    ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'mongo']
+    ['orange', 'apple', 'pear', 'apple', 'banana', 'mongo']
+    ['orange', 'apple', 'pear', 'apple', 'banana']
+
+
 - 18\. 列表的排序方法`sort()`以及内置函数`sorted()`的应用场合、语法、排序规则的指定（lambda函数）、返回值等
+
+
+```python
+# TODO
+```
+
 - 19\. 元组的非正规写法
   - 多变量赋值
   - 两变量值交换
+
+
+```python
+# 多变量赋值
+a, b, (c, d), e = 1, 3, (5, 7), 9
+print(a, b, c, d, e, sep = ', ')
+
+# 两变量值交换
+x, y = 'hello', 'world'
+x, y = y, x
+print(x, y)
+```
+
+    1, 3, 5, 7, 9
+    world hello
+
+
 - 20\. 元组的基本要求和操作
   - 利用列表里面嵌套元组完成相应应用描述，并能进行操作
 - 21\. 集合运算符：`&`, `|`, `-`（只要求能读懂程序）
+
+
+```python
+girls = {'Adele', 'Lady Gaga', 'G.E.M'}
+boys = {'Jay Zhou', 'Ed Sheeran', 'Justin Bieber'}
+chinese = {'G.E.M', 'Jay Zhou'}
+singers = girls | boys
+chineseBoys = chinese & boys
+foreignGirls = girls - chinese
+print(singers, chineseBoys, foreignGirls, sep = '\n')
+```
+
+    {'Lady Gaga', 'G.E.M', 'Jay Zhou', 'Justin Bieber', 'Adele', 'Ed Sheeran'}
+    {'Jay Zhou'}
+    {'Lady Gaga', 'Adele'}
+
+
 - 22\. 集合操作的方法：`add()`
+
+
+```python
+girls = {'Adele', 'Lady Gaga', 'G.E.M'}
+girls.add('WanTing')
+print(girls)
+```
+
+    {'Lady Gaga', 'WanTing', 'Adele', 'G.E.M'}
+
+
 - 23\. 集合的去除重复工作
+
+
+```python
+l = list('Hello world, my girl!')
+
+# 顺序无关
+unique = list(set(l))
+print(unique)
+
+# 顺序有关
+unique = []
+seen = set()
+for e in l:
+    if e in seen:
+        continue
+    else:
+        unique.append(e)
+        seen.add(e)
+print(unique)
+```
+
+    ['y', 'd', 'm', 'g', 'l', ',', 'w', 'H', 'i', 'r', ' ', '!', 'e', 'o']
+    ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
+
+
 - 24\. 字典添加新的键值对
+
+
+```python
+d = {'whale': 5, 'shark': 3}
+print(d)
+d['python'] = 9 # Add 1
+print(d)
+d.update({'shrimp': 10000, 'kraken': 1, 'serpant': 2}) # Add many
+print(d)
+```
+
+    {'whale': 5, 'shark': 3}
+    {'whale': 5, 'shark': 3, 'python': 9}
+    {'whale': 5, 'shark': 3, 'python': 9, 'shrimp': 10000, 'kraken': 1, 'serpant': 2}
+
+
 - 25\. 字典中键、值、键值对的获取 `keys()`, `values()`, `items()`
   - 对字典元素的迭代默认情况是对键的迭代
   - 能够用字典描述特定键值对类型的应用并操作
+
+
+```python
+d = {'whale': 5, 'shark': 3, 'python': 19}
+print(d.keys())
+print(d.values())
+print(d.items())
+for k in d:
+    print(k)
+for k, v in d.items():
+    print('the number of {:<6} = {:>2}'.format(k, v))
+```
+
+    dict_keys(['whale', 'shark', 'python'])
+    dict_values([5, 3, 19])
+    dict_items([('whale', 5), ('shark', 3), ('python', 19)])
+    whale
+    shark
+    python
+    the number of whale  =  5
+    the number of shark  =  3
+    the number of python = 19
+
+
 - 26\. 字典的`get()`方法的作用及使用
+
+  `get(key[, default])`
+  > 如果 key 存在于字典中则返回 key 的值，否则返回 default。 如果 default 未给出则默认为 None，因而此方法绝不会引发 KeyError。
+
+
+```python
+d = {'whale': 5, 'shark': 3, 'python': 19}
+print(d['whale'])
+# print(d['shrimp'])         # shrimp 不存在，报错
+print(d.get('whale'))
+print(d.get('shrimp'))       # shrimp 不存在，不报错
+print(d.get('shrimp', 999))  # shrimp 不存在，返回默认值
+```
+
+    5
+    5
+    None
+    999
+
+
 - 27\. 函数定义及简单参数传递
+
+
+```python
+# TODO
+```
+
 - 28\. 使用pip工具查看当前已安装的Python扩展库的完整命令`pip list`，安装扩展库命令`pip install`库名。
+  - pip list
+    ```shell
+    $ pip list
+    Package              Version
+    -------------------- ---------
+    appdirs              1.4.4
+    appnope              0.1.2
+    argon2-cffi          21.3.0
+    argon2-cffi-bindings 21.2.0
+    attrs                21.2.0
+    ...
+    ...
+    ```
+  - pip install
+    ```shell
+    $ pip install pandas
+    $ pip install wordcloud
+    $ pip install jieba
+    ```
+
 - 29\. 文件打开模式：`r`, `w`
 - 30\. 读文本文件的方法：`read()`, `readlines()`
   - 对文件对象的迭代默认情况是`readlines()`
 - 31\. 写文本文件的方法：`writelines()`
 - 32\. CSV库，json库读写文件操作的基本语法
 - 33\. 上下文管理器的应用：`with open() as f:`
+
 - 34\. 第三方库random的方法：`randint()`
+
+
+```python
+import random
+random.seed(5)
+x = random.randint(0, 9)  # 唯一的闭区间[0, 9]
+random.seed(5)        # 同样的seed
+y = random.randint(0, 9)  # 得到同样的随机数
+print(x, y)
+```
+
+    9 9
+
+
+
+```python
+import random
+cards = list('A23456789JQK')
+random.shuffle(cards)
+print(cards)
+random.shuffle(cards)
+print(cards)
+```
+
+    ['3', '4', 'K', 'Q', 'J', '2', '7', '8', 'A', '9', '6', '5']
+    ['9', 'K', '6', '2', '3', '5', 'J', '4', 'A', '7', 'Q', '8']
+
+
 - 35\. 可视化：绘制饼图、直方图、多种折线图、散点图
+
+
+```python
+# TODO
+```
+
+## 题型
+
+所有选择题和判断题均出自砺儒云平台的课前、课后测试题，只有个别题目做了适当修改
+
+| #   | 题型                 | 分数 |
+| --- | -------------------- | ---- |
+| 1   | 选择题               | 10x2 |
+| 2   | 判断题               | 15x1 |
+| 3   | 程序分析题           | 5x5  |
+| 4   | 应用题（程序填空）   | 10x2 |
+| 5   | 思维提升题（问答题） | 2x5  |
+| 6   | 应用创新题（编程题） | 1x10 |
