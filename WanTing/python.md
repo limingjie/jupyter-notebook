@@ -622,8 +622,42 @@ print(fruits)
 
 
 ```python
-# TODO
+films = ['扬名立万', '英雄儿女', '梅艳芳', '沙丘', '我和我的父辈', '白毛女', '长津湖', '007', '大嫂归来']
+scores = [8.3, 7.6, 9.5, 9.0, 8.9, 7.3, 9.8, 6.5, 5.0]
+
+print("拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。")
+
+# 元组
+filmRatingTuple = list(zip(films, scores))
+print(filmRatingTuple)
+
+# 用 sort() 排序
+filmRatingTuple.sort()
+print(filmRatingTuple)
+
+# 用 sort(key...) 排序
+filmRatingTuple.sort(key=lambda x: x[1], reverse=True)
+print(filmRatingTuple[0:3])
+
+print("拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。")
+
+filmRatingDict = dict(zip(films, scores))
+print(filmRatingDict)
+print(sorted(filmRatingDict))
+print(sorted(filmRatingDict.items()))
+print(sorted(filmRatingDict.items(), key = lambda x: -x[1])[0:3])
 ```
+
+    拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。
+    [('扬名立万', 8.3), ('英雄儿女', 7.6), ('梅艳芳', 9.5), ('沙丘', 9.0), ('我和我的父辈', 8.9), ('白毛女', 7.3), ('长津湖', 9.8), ('007', 6.5), ('大嫂归来', 5.0)]
+    [('007', 6.5), ('大嫂归来', 5.0), ('我和我的父辈', 8.9), ('扬名立万', 8.3), ('梅艳芳', 9.5), ('沙丘', 9.0), ('白毛女', 7.3), ('英雄儿女', 7.6), ('长津湖', 9.8)]
+    [('长津湖', 9.8), ('梅艳芳', 9.5), ('沙丘', 9.0)]
+    拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。
+    {'扬名立万': 8.3, '英雄儿女': 7.6, '梅艳芳': 9.5, '沙丘': 9.0, '我和我的父辈': 8.9, '白毛女': 7.3, '长津湖': 9.8, '007': 6.5, '大嫂归来': 5.0}
+    ['007', '大嫂归来', '我和我的父辈', '扬名立万', '梅艳芳', '沙丘', '白毛女', '英雄儿女', '长津湖']
+    [('007', 6.5), ('大嫂归来', 5.0), ('我和我的父辈', 8.9), ('扬名立万', 8.3), ('梅艳芳', 9.5), ('沙丘', 9.0), ('白毛女', 7.3), ('英雄儿女', 7.6), ('长津湖', 9.8)]
+    [('长津湖', 9.8), ('梅艳芳', 9.5), ('沙丘', 9.0)]
+
 
 - 19\. 元组的非正规写法
   - 多变量赋值
@@ -660,7 +694,7 @@ foreignGirls = girls - chinese
 print(singers, chineseBoys, foreignGirls, sep = '\n')
 ```
 
-    {'Lady Gaga', 'G.E.M', 'Jay Zhou', 'Justin Bieber', 'Adele', 'Ed Sheeran'}
+    {'Lady Gaga', 'Adele', 'Jay Zhou', 'Ed Sheeran', 'G.E.M', 'Justin Bieber'}
     {'Jay Zhou'}
     {'Lady Gaga', 'Adele'}
 
@@ -674,7 +708,7 @@ girls.add('WanTing')
 print(girls)
 ```
 
-    {'Lady Gaga', 'WanTing', 'Adele', 'G.E.M'}
+    {'G.E.M', 'Lady Gaga', 'Adele', 'WanTing'}
 
 
 - 23\. 集合的去除重复工作
@@ -699,7 +733,7 @@ for e in l:
 print(unique)
 ```
 
-    ['y', 'd', 'm', 'g', 'l', ',', 'w', 'H', 'i', 'r', ' ', '!', 'e', 'o']
+    ['e', 'w', 'r', ',', 'H', 'd', 'y', 'i', ' ', '!', 'g', 'l', 'm', 'o']
     ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
 
 
@@ -772,36 +806,294 @@ print(d.get('shrimp', 999))  # shrimp 不存在，返回默认值
 
 
 ```python
-# TODO
+# 斐波那契数列
+def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a + b
+    print()
+
+fib(2000)
 ```
 
-- 28\. 使用pip工具查看当前已安装的Python扩展库的完整命令`pip list`，安装扩展库命令`pip install`库名。
-  - pip list
-    ```shell
-    $ pip list
-    Package              Version
-    -------------------- ---------
-    appdirs              1.4.4
-    appnope              0.1.2
-    argon2-cffi          21.3.0
-    argon2-cffi-bindings 21.2.0
-    attrs                21.2.0
-    ...
-    ...
-    ```
-  - pip install
-    ```shell
-    $ pip install pandas
-    $ pip install wordcloud
-    $ pip install jieba
-    ```
+    0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 
 
-- 29\. 文件打开模式：`r`, `w`
-- 30\. 读文本文件的方法：`read()`, `readlines()`
+
+- 28\. 使用pip工具查看当前已安装的Python扩展库的完整命令`pip list`，安装扩展库命令`pip install`库名。
+
+
+```python
+pip list
+```
+
+    Package             Version
+    ------------------- -------
+    appnope             0.1.2
+    argon2-cffi         21.1.0
+    attrs               21.2.0
+    autopep8            1.5.7
+    backcall            0.2.0
+    bleach              4.1.0
+    cffi                1.14.6
+    cycler              0.11.0
+    debugpy             1.5.0
+    decorator           5.1.0
+    defusedxml          0.7.1
+    entrypoints         0.3
+    fonttools           4.28.5
+    GDAL                3.3.3
+    ipykernel           6.4.1
+    ipython             7.28.0
+    ipython-genutils    0.2.0
+    jedi                0.18.0
+    jieba               0.42.1
+    Jinja2              3.0.2
+    jsonschema          4.1.0
+    jupyter-client      7.0.6
+    jupyter-core        4.8.1
+    jupyterlab-pygments 0.1.2
+    kiwisolver          1.3.2
+    MarkupSafe          2.0.1
+    matplotlib          3.5.1
+    matplotlib-inline   0.1.3
+    mistune             0.8.4
+    nbclient            0.5.4
+    nbconvert           6.2.0
+    nbformat            5.1.3
+    nest-asyncio        1.5.1
+    notebook            6.4.4
+    numpy               1.21.5
+    packaging           21.0
+    pandas              1.3.5
+    pandocfilters       1.5.0
+    parso               0.8.2
+    pexpect             4.8.0
+    pickleshare         0.7.5
+    Pillow              8.4.0
+    pip                 21.3.1
+    prettytable         2.5.0
+    prometheus-client   0.11.0
+    prompt-toolkit      3.0.20
+    ptyprocess          0.7.0
+    pycodestyle         2.8.0
+    pycparser           2.20
+    pyecharts           1.9.1
+    Pygments            2.10.0
+    pyparsing           2.4.7
+    pyrsistent          0.18.0
+    python-dateutil     2.8.2
+    pytz                2021.3
+    pyzmq               22.3.0
+    Send2Trash          1.8.0
+    setuptools          59.0.1
+    simplejson          3.17.6
+    six                 1.16.0
+    terminado           0.12.1
+    testpath            0.5.0
+    toml                0.10.2
+    tornado             6.1
+    traitlets           5.1.0
+    wcwidth             0.2.5
+    webencodings        0.5.1
+    wheel               0.37.0
+    wordcloud           1.8.1
+    Note: you may need to restart the kernel to use updated packages.
+
+
+
+```python
+pip install pandas
+```
+
+    [33mDEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621[0m
+    Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (1.3.5)
+    Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2021.3)
+    Requirement already satisfied: python-dateutil>=2.7.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2.8.2)
+    Requirement already satisfied: numpy>=1.17.3 in /usr/local/lib/python3.9/site-packages (from pandas) (1.21.5)
+    Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.9/site-packages (from python-dateutil>=2.7.3->pandas) (1.16.0)
+    Note: you may need to restart the kernel to use updated packages.
+
+
+- 29\. 文件打开模式
+  - `r` - 读模式
+  - `w` - 写模式
+  - `a` - 追加模式
+- 30\. 读文本文件的方法
+  - `read()` - 打开 file 并返回对应的 file object。
+  - `readlines()` - 从流中读取并返回包含多行的列表。
   - 对文件对象的迭代默认情况是`readlines()`
+    - 请注意使用 `for line in file: ...` 就足够对文件对象进行迭代了，可以不必调用 `file.readlines()`。
 - 31\. 写文本文件的方法：`writelines()`
+
+
+```python
+# 打开文件的两种方式
+# 1 - open() 函数，需要 close() 函数配合关闭文件
+f = open('./files/test.txt', 'r', encoding = 'utf8')
+print(f.read())
+f.close()
+
+# 2 - `with open` 语法确保文件一定会关闭
+with open('./files/test.txt', 'r', encoding='utf8') as f:
+    print(f.read())
+print(f.closed)
+```
+
+    line 1 - 常记溪亭日暮, 沉醉不知归路。
+    line 2 - 兴尽晚回舟, 误入藕花深处。
+    line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+    
+    line 1 - 常记溪亭日暮, 沉醉不知归路。
+    line 2 - 兴尽晚回舟, 误入藕花深处。
+    line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+    
+    True
+
+
+- 第14周的例子
+
+
+```python
+with open('./files/test.txt', 'r') as file1:  # 上下文管理器
+    # 一次性读取整个文件
+    print("read() 方法的结果.....")
+    print(type(file1.read()))
+    file1.seek(0)  # 将文件定位于文件头 1代表当前位置 ，2代表文件结尾
+    print(file1.read())
+
+    # 按行读取文件
+    print("readline() 方法的结果.....")
+    file1.seek(0)
+    print(type(file1.readline()))
+    print(file1.readline())
+
+    # 以列表方式读入数据
+    print("以列表方式读入数据")
+    file1.seek(0)
+    lines = file1.readlines()
+    print(type(lines))
+    print(lines)
+    print(len(lines))
+```
+
+    read() 方法的结果.....
+    <class 'str'>
+    line 1 - 常记溪亭日暮, 沉醉不知归路。
+    line 2 - 兴尽晚回舟, 误入藕花深处。
+    line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+    
+    readline() 方法的结果.....
+    <class 'str'>
+    line 2 - 兴尽晚回舟, 误入藕花深处。
+    
+    以列表方式读入数据
+    <class 'list'>
+    ['line 1 - 常记溪亭日暮, 沉醉不知归路。\n', 'line 2 - 兴尽晚回舟, 误入藕花深处。\n', 'line 3 - 争渡, 争渡, 惊起一滩鸥鹭。\n']
+    3
+
+
+- 迭代文件 - 对文件对象的迭代默认情况是`readlines()`。
+
+
+```python
+with open('./files/test.txt', 'r') as f:
+    for line in f:
+        print(line, end = '')
+```
+
+    line 1 - 常记溪亭日暮, 沉醉不知归路。
+    line 2 - 兴尽晚回舟, 误入藕花深处。
+    line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+
+- 写文件
+
+
+```python
+import random
+import string
+import os
+
+# 创建一个临时文件
+filename = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)) + '.txt'
+f = open(filename, 'x')
+f.close()
+
+# writelines() - 注意换行符
+with open(filename, 'w') as f:
+    f.writelines(['《盗梦空间》', '《无间道》', '《活着》'])
+    f.writelines(['《2046》\n', '《重慶森林》\n', '《花樣年華》\n'])
+
+with open(filename, 'r') as f:
+    for line in f:
+        print(line, end = '')
+
+# 删除临时文件
+os.remove(filename)
+```
+
+    《盗梦空间》《无间道》《活着》《2046》
+    《重慶森林》
+    《花樣年華》
+
+
 - 32\. CSV库，json库读写文件操作的基本语法
-- 33\. 上下文管理器的应用：`with open() as f:`
+
+
+```python
+# 方法1 按文本方式读取csv文件
+with open('./files/test.csv', 'r', encoding='utf-8') as fp:
+    print(fp.readlines())
+
+# 方法2 用CSV模块来读取csv文件
+import csv
+
+print("======使用csv读取文件")
+with open('./files/test.csv', 'r', encoding='utf-8') as fp:
+    reader = csv.reader(fp)
+    aList = list(reader)
+    print(aList)
+
+# 用CSV模块来写csv文件
+blist = [['佛山', '101.5', '120.7', '121.4'], ['江门', '101.5', '120.7', '121.4']]
+with open('./files/test.csv', 'a+') as f:
+    writer = csv.writer(f, lineterminator='\n')
+    for item in blist:
+        writer.writerow(item)
+```
+
+    ['佛山,101.5,120.7,121.4\n', '江门,101.5,120.7,121.4\n']
+    ======使用csv读取文件
+    [['佛山', '101.5', '120.7', '121.4'], ['江门', '101.5', '120.7', '121.4']]
+
+
+
+```python
+import json
+
+with open('./files/beijing_aqi.json', 'r', encoding='utf-8') as fp:
+    cityList = json.load(fp)
+    print(type(cityList))
+    print(len(cityList))
+    print(cityList[0])
+    """1 使用列表对象本身来进行排序"""
+    # cityList.sort(key = lambda  x:x['aqi'])
+    # print(cityList)
+    """2 使用内置函数sorted进行排序"""
+    sortedAQI = sorted(cityList, key=lambda x: x['aqi'])
+
+    with open('./files/aqi_top5.json', 'w', encoding='utf-8') as fp2:
+        json.dump(sortedAQI[:5], fp2, ensure_ascii=False, indent=8)
+```
+
+    <class 'list'>
+    13
+    {'aqi': 47, 'area': '北京', 'pm2_5': 32, 'pm2_5_24h': 33, 'position_name': '万寿西宫', 'primary_pollutant': None, 'quality': '优', 'station_code': '1001A', 'time_point': '2017-07-29T14:00:00Z'}
+
+
+- 33\. 上下文管理器的应用
+  - `with open() as f:` - 参见 29-31 知识点代码
 
 - 34\. 第三方库random的方法：`randint()`
 
@@ -810,7 +1102,7 @@ print(d.get('shrimp', 999))  # shrimp 不存在，返回默认值
 import random
 random.seed(5)
 x = random.randint(0, 9)  # 唯一的闭区间[0, 9]
-random.seed(5)        # 同样的seed
+random.seed(5)            # 同样的seed
 y = random.randint(0, 9)  # 得到同样的随机数
 print(x, y)
 ```

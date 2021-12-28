@@ -1290,9 +1290,48 @@ three
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{34}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} TODO}
+\PY{n}{films} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{扬名立万}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{英雄儿女}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{梅艳芳}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{沙丘}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{我和我的父辈}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{白毛女}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{长津湖}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{007}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{大嫂归来}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{n}{scores} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{8.3}\PY{p}{,} \PY{l+m+mf}{7.6}\PY{p}{,} \PY{l+m+mf}{9.5}\PY{p}{,} \PY{l+m+mf}{9.0}\PY{p}{,} \PY{l+m+mf}{8.9}\PY{p}{,} \PY{l+m+mf}{7.3}\PY{p}{,} \PY{l+m+mf}{9.8}\PY{p}{,} \PY{l+m+mf}{6.5}\PY{p}{,} \PY{l+m+mf}{5.0}\PY{p}{]}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 元组}
+\PY{n}{filmRatingTuple} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{n}{films}\PY{p}{,} \PY{n}{scores}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{filmRatingTuple}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 用 sort() 排序}
+\PY{n}{filmRatingTuple}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{filmRatingTuple}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 用 sort(key...) 排序}
+\PY{n}{filmRatingTuple}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{key}\PY{o}{=}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{reverse}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{filmRatingTuple}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{filmRatingDict} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{n}{films}\PY{p}{,} \PY{n}{scores}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{filmRatingDict}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{filmRatingDict}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{filmRatingDict}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{filmRatingDict}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{key} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{o}{\PYZhy{}}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。
+[('扬名立万', 8.3), ('英雄儿女', 7.6), ('梅艳芳', 9.5), ('沙丘', 9.0), ('我和我的父辈', 8.9),
+('白毛女', 7.3), ('长津湖', 9.8), ('007', 6.5), ('大嫂归来', 5.0)]
+[('007', 6.5), ('大嫂归来', 5.0), ('我和我的父辈', 8.9), ('扬名立万', 8.3), ('梅艳芳', 9.5),
+('沙丘', 9.0), ('白毛女', 7.3), ('英雄儿女', 7.6), ('长津湖', 9.8)]
+[('长津湖', 9.8), ('梅艳芳', 9.5), ('沙丘', 9.0)]
+拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。
+\{'扬名立万': 8.3, '英雄儿女': 7.6, '梅艳芳': 9.5, '沙丘': 9.0, '我和我的父辈': 8.9, '白毛女': 7.3,
+'长津湖': 9.8, '007': 6.5, '大嫂归来': 5.0\}
+['007', '大嫂归来', '我和我的父辈', '扬名立万', '梅艳芳', '沙丘', '白毛女', '英雄儿女', '长津湖']
+[('007', 6.5), ('大嫂归来', 5.0), ('我和我的父辈', 8.9), ('扬名立万', 8.3), ('梅艳芳', 9.5),
+('沙丘', 9.0), ('白毛女', 7.3), ('英雄儿女', 7.6), ('长津湖', 9.8)]
+[('长津湖', 9.8), ('梅艳芳', 9.5), ('沙丘', 9.0)]
+    \end{Verbatim}
 
     \begin{itemize}
 \tightlist
@@ -1356,7 +1395,7 @@ world hello
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-\{'Lady Gaga', 'G.E.M', 'Jay Zhou', 'Justin Bieber', 'Adele', 'Ed Sheeran'\}
+\{'Lady Gaga', 'Adele', 'Jay Zhou', 'Ed Sheeran', 'G.E.M', 'Justin Bieber'\}
 \{'Jay Zhou'\}
 \{'Lady Gaga', 'Adele'\}
     \end{Verbatim}
@@ -1377,7 +1416,7 @@ world hello
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-\{'Lady Gaga', 'WanTing', 'Adele', 'G.E.M'\}
+\{'G.E.M', 'Lady Gaga', 'Adele', 'WanTing'\}
     \end{Verbatim}
 
     \begin{itemize}
@@ -1409,7 +1448,7 @@ world hello
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-['y', 'd', 'm', 'g', 'l', ',', 'w', 'H', 'i', 'r', ' ', '!', 'e', 'o']
+['e', 'w', 'r', ',', 'H', 'd', 'y', 'i', ' ', '!', 'g', 'l', 'm', 'o']
 ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
     \end{Verbatim}
 
@@ -1516,65 +1555,387 @@ None
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{42}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} TODO}
+\PY{c+c1}{\PYZsh{} 斐波那契数列}
+\PY{k}{def} \PY{n+nf}{fib}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+    \PY{n}{a}\PY{p}{,} \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}
+    \PY{k}{while} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{a}\PY{p}{,} \PY{n}{b} \PY{o}{=} \PY{n}{b}\PY{p}{,} \PY{n}{a} \PY{o}{+} \PY{n}{b}
+    \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{fib}\PY{p}{(}\PY{l+m+mi}{2000}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
+    \end{Verbatim}
 
     \begin{itemize}
 \tightlist
 \item
   28.
   使用pip工具查看当前已安装的Python扩展库的完整命令\texttt{pip\ list}，安装扩展库命令\texttt{pip\ install}库名。
-
-  \begin{itemize}
-  \item
-    pip list
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{$ pip list}
-\NormalTok{Package              Version}
-\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-} {-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\NormalTok{appdirs              1.4.4}
-\NormalTok{appnope              0.1.2}
-\NormalTok{argon2{-}cffi          21.3.0}
-\NormalTok{argon2{-}cffi{-}bindings 21.2.0}
-\NormalTok{attrs                21.2.0}
-\NormalTok{...}
-\NormalTok{...}
-\end{Highlighting}
-\end{Shaded}
-  \item
-    pip install
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{$ pip install pandas}
-\NormalTok{$ pip install wordcloud}
-\NormalTok{$ pip install jieba}
-\end{Highlighting}
-\end{Shaded}
-  \end{itemize}
 \end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{43}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pip} \PY{n+nb}{list}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Package             Version
+------------------- -------
+appnope             0.1.2
+argon2-cffi         21.1.0
+attrs               21.2.0
+autopep8            1.5.7
+backcall            0.2.0
+bleach              4.1.0
+cffi                1.14.6
+cycler              0.11.0
+debugpy             1.5.0
+decorator           5.1.0
+defusedxml          0.7.1
+entrypoints         0.3
+fonttools           4.28.5
+GDAL                3.3.3
+ipykernel           6.4.1
+ipython             7.28.0
+ipython-genutils    0.2.0
+jedi                0.18.0
+jieba               0.42.1
+Jinja2              3.0.2
+jsonschema          4.1.0
+jupyter-client      7.0.6
+jupyter-core        4.8.1
+jupyterlab-pygments 0.1.2
+kiwisolver          1.3.2
+MarkupSafe          2.0.1
+matplotlib          3.5.1
+matplotlib-inline   0.1.3
+mistune             0.8.4
+nbclient            0.5.4
+nbconvert           6.2.0
+nbformat            5.1.3
+nest-asyncio        1.5.1
+notebook            6.4.4
+numpy               1.21.5
+packaging           21.0
+pandas              1.3.5
+pandocfilters       1.5.0
+parso               0.8.2
+pexpect             4.8.0
+pickleshare         0.7.5
+Pillow              8.4.0
+pip                 21.3.1
+prettytable         2.5.0
+prometheus-client   0.11.0
+prompt-toolkit      3.0.20
+ptyprocess          0.7.0
+pycodestyle         2.8.0
+pycparser           2.20
+pyecharts           1.9.1
+Pygments            2.10.0
+pyparsing           2.4.7
+pyrsistent          0.18.0
+python-dateutil     2.8.2
+pytz                2021.3
+pyzmq               22.3.0
+Send2Trash          1.8.0
+setuptools          59.0.1
+simplejson          3.17.6
+six                 1.16.0
+terminado           0.12.1
+testpath            0.5.0
+toml                0.10.2
+tornado             6.1
+traitlets           5.1.0
+wcwidth             0.2.5
+webencodings        0.5.1
+wheel               0.37.0
+wordcloud           1.8.1
+Note: you may need to restart the kernel to use updated packages.
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{44}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pip} \PY{n}{install} \PY{n}{pandas}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\textcolor{ansi-yellow}{DEPRECATION: Configuring installation scheme with distutils config files is
+deprecated and will no longer work in the near future. If you are using a
+Homebrew or Linuxbrew Python, please see discussion at
+https://github.com/Homebrew/homebrew-core/issues/76621}
+Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages
+(1.3.5)
+Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.9/site-
+packages (from pandas) (2021.3)
+Requirement already satisfied: python-dateutil>=2.7.3 in
+/usr/local/lib/python3.9/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy>=1.17.3 in /usr/local/lib/python3.9/site-
+packages (from pandas) (1.21.5)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.9/site-
+packages (from python-dateutil>=2.7.3->pandas) (1.16.0)
+Note: you may need to restart the kernel to use updated packages.
+    \end{Verbatim}
 
     \begin{itemize}
 \tightlist
 \item
-  29. 文件打开模式：\texttt{r}, \texttt{w}
-\item
-  30. 读文本文件的方法：\texttt{read()}, \texttt{readlines()}
+  29. 文件打开模式
 
   \begin{itemize}
   \tightlist
   \item
+    \texttt{r} - 读模式
+  \item
+    \texttt{w} - 写模式
+  \item
+    \texttt{a} - 追加模式
+  \end{itemize}
+\item
+  30. 读文本文件的方法
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{read()} - 打开 file 并返回对应的 file object。
+  \item
+    \texttt{readlines()} - 从流中读取并返回包含多行的列表。
+  \item
     对文件对象的迭代默认情况是\texttt{readlines()}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      请注意使用 \texttt{for\ line\ in\ file:\ ...}
+      就足够对文件对象进行迭代了，可以不必调用
+      \texttt{file.readlines()}。
+    \end{itemize}
   \end{itemize}
 \item
   31. 写文本文件的方法：\texttt{writelines()}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{45}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} 打开文件的两种方式}
+\PY{c+c1}{\PYZsh{} 1 \PYZhy{} open() 函数，需要 close() 函数配合关闭文件}
+\PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 2 \PYZhy{} `with open` 语法确保文件一定会关闭}
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{o}{.}\PY{n}{closed}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+True
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  第14周的例子
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{46}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{file1}\PY{p}{:}  \PY{c+c1}{\PYZsh{} 上下文管理器}
+    \PY{c+c1}{\PYZsh{} 一次性读取整个文件}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{read() 方法的结果.....}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{file1}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+    \PY{n}{file1}\PY{o}{.}\PY{n}{seek}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 将文件定位于文件头 1代表当前位置 ，2代表文件结尾}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{file1}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+
+    \PY{c+c1}{\PYZsh{} 按行读取文件}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{readline() 方法的结果.....}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{file1}\PY{o}{.}\PY{n}{seek}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{file1}\PY{o}{.}\PY{n}{readline}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{file1}\PY{o}{.}\PY{n}{readline}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+
+    \PY{c+c1}{\PYZsh{} 以列表方式读入数据}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{以列表方式读入数据}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{file1}\PY{o}{.}\PY{n}{seek}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+    \PY{n}{lines} \PY{o}{=} \PY{n}{file1}\PY{o}{.}\PY{n}{readlines}\PY{p}{(}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{lines}\PY{p}{)}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{lines}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{lines}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+read() 方法的结果{\ldots}
+<class 'str'>
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+readline() 方法的结果{\ldots}
+<class 'str'>
+line 2 - 兴尽晚回舟, 误入藕花深处。
+
+以列表方式读入数据
+<class 'list'>
+['line 1 - 常记溪亭日暮, 沉醉不知归路。\textbackslash{}n', 'line 2 - 兴尽晚回舟, 误入藕花深处。\textbackslash{}n', 'line 3 - 争渡, 争渡,
+惊起一滩鸥鹭。\textbackslash{}n']
+3
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  迭代文件 - 对文件对象的迭代默认情况是\texttt{readlines()}。
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{47}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+    \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{f}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{line}\PY{p}{,} \PY{n}{end} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  写文件
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{48}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{random}
+\PY{k+kn}{import} \PY{n+nn}{string}
+\PY{k+kn}{import} \PY{n+nn}{os}
+
+\PY{c+c1}{\PYZsh{} 创建一个临时文件}
+\PY{n}{filename} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{random}\PY{o}{.}\PY{n}{choices}\PY{p}{(}\PY{n}{string}\PY{o}{.}\PY{n}{ascii\PYZus{}uppercase} \PY{o}{+} \PY{n}{string}\PY{o}{.}\PY{n}{digits}\PY{p}{,} \PY{n}{k}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.txt}\PY{l+s+s1}{\PYZsq{}}
+\PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} writelines() \PYZhy{} 注意换行符}
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+    \PY{n}{f}\PY{o}{.}\PY{n}{writelines}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《盗梦空间》}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《无间道》}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《活着》}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+    \PY{n}{f}\PY{o}{.}\PY{n}{writelines}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《2046》}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《重慶森林》}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{《花樣年華》}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+    \PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{f}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{line}\PY{p}{,} \PY{n}{end} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 删除临时文件}
+\PY{n}{os}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{filename}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+《盗梦空间》《无间道》《活着》《2046》
+《重慶森林》
+《花樣年華》
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
   32. CSV库，json库读写文件操作的基本语法
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{49}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} 方法1 按文本方式读取csv文件}
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf\PYZhy{}8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fp}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{fp}\PY{o}{.}\PY{n}{readlines}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 方法2 用CSV模块来读取csv文件}
+\PY{k+kn}{import} \PY{n+nn}{csv}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{======使用csv读取文件}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf\PYZhy{}8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fp}\PY{p}{:}
+    \PY{n}{reader} \PY{o}{=} \PY{n}{csv}\PY{o}{.}\PY{n}{reader}\PY{p}{(}\PY{n}{fp}\PY{p}{)}
+    \PY{n}{aList} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{reader}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{aList}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} 用CSV模块来写csv文件}
+\PY{n}{blist} \PY{o}{=} \PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{佛山}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{101.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{120.7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{121.4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{江门}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{101.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{120.7}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{121.4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/test.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a+}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{f}\PY{p}{:}
+    \PY{n}{writer} \PY{o}{=} \PY{n}{csv}\PY{o}{.}\PY{n}{writer}\PY{p}{(}\PY{n}{f}\PY{p}{,} \PY{n}{lineterminator}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{blist}\PY{p}{:}
+        \PY{n}{writer}\PY{o}{.}\PY{n}{writerow}\PY{p}{(}\PY{n}{item}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['佛山,101.5,120.7,121.4\textbackslash{}n', '江门,101.5,120.7,121.4\textbackslash{}n']
+======使用csv读取文件
+[['佛山', '101.5', '120.7', '121.4'], ['江门', '101.5', '120.7', '121.4']]
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{50}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{json}
+
+\PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/beijing\PYZus{}aqi.json}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf\PYZhy{}8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fp}\PY{p}{:}
+    \PY{n}{cityList} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{fp}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{cityList}\PY{p}{)}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{cityList}\PY{p}{)}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{cityList}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}1 使用列表对象本身来进行排序\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{c+c1}{\PYZsh{} cityList.sort(key = lambda  x:x[\PYZsq{}aqi\PYZsq{}])}
+    \PY{c+c1}{\PYZsh{} print(cityList)}
+    \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}2 使用内置函数sorted进行排序\PYZdq{}\PYZdq{}\PYZdq{}}
+    \PY{n}{sortedAQI} \PY{o}{=} \PY{n+nb}{sorted}\PY{p}{(}\PY{n}{cityList}\PY{p}{,} \PY{n}{key}\PY{o}{=}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{aqi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+
+    \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./files/aqi\PYZus{}top5.json}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{encoding}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{utf\PYZhy{}8}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{fp2}\PY{p}{:}
+        \PY{n}{json}\PY{o}{.}\PY{n}{dump}\PY{p}{(}\PY{n}{sortedAQI}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,} \PY{n}{fp2}\PY{p}{,} \PY{n}{ensure\PYZus{}ascii}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{indent}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'list'>
+13
+\{'aqi': 47, 'area': '北京', 'pm2\_5': 32, 'pm2\_5\_24h': 33, 'position\_name': '万寿西宫',
+'primary\_pollutant': None, 'quality': '优', 'station\_code': '1001A',
+'time\_point': '2017-07-29T14:00:00Z'\}
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
 \item
-  33. 上下文管理器的应用：\texttt{with\ open()\ as\ f:}
+  33. 上下文管理器的应用
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{with\ open()\ as\ f:} - 参见 29-31 知识点代码
+  \end{itemize}
 \end{itemize}
 
     \begin{itemize}
@@ -1584,12 +1945,12 @@ None
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{43}{\boxspacing}
+\prompt{In}{incolor}{51}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{random}
 \PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
 \PY{n}{x} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 唯一的闭区间[0, 9]}
-\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}        \PY{c+c1}{\PYZsh{} 同样的seed}
+\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}            \PY{c+c1}{\PYZsh{} 同样的seed}
 \PY{n}{y} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{9}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 得到同样的随机数}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
 \end{Verbatim}
@@ -1600,7 +1961,7 @@ None
     \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{44}{\boxspacing}
+\prompt{In}{incolor}{52}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{random}
 \PY{n}{cards} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A23456789JQK}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -1623,7 +1984,7 @@ None
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{45}{\boxspacing}
+\prompt{In}{incolor}{53}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} TODO}
 \end{Verbatim}

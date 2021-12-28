@@ -16313,18 +16313,70 @@ three
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">films</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;扬名立万&#39;</span><span class="p">,</span> <span class="s1">&#39;英雄儿女&#39;</span><span class="p">,</span> <span class="s1">&#39;梅艳芳&#39;</span><span class="p">,</span> <span class="s1">&#39;沙丘&#39;</span><span class="p">,</span> <span class="s1">&#39;我和我的父辈&#39;</span><span class="p">,</span> <span class="s1">&#39;白毛女&#39;</span><span class="p">,</span> <span class="s1">&#39;长津湖&#39;</span><span class="p">,</span> <span class="s1">&#39;007&#39;</span><span class="p">,</span> <span class="s1">&#39;大嫂归来&#39;</span><span class="p">]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8.3</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。&quot;</span><span class="p">)</span>
+
+<span class="c1"># 元组</span>
+<span class="n">filmRatingTuple</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">films</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filmRatingTuple</span><span class="p">)</span>
+
+<span class="c1"># 用 sort() 排序</span>
+<span class="n">filmRatingTuple</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filmRatingTuple</span><span class="p">)</span>
+
+<span class="c1"># 用 sort(key...) 排序</span>
+<span class="n">filmRatingTuple</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filmRatingTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。&quot;</span><span class="p">)</span>
+
+<span class="n">filmRatingDict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">films</span><span class="p">,</span> <span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filmRatingDict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">filmRatingDict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">filmRatingDict</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">filmRatingDict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>拓展1: 电影列表中的元素使用元组: (电影名 , 评分)，按评分排序并输出排名前三电影。
+[(&#39;扬名立万&#39;, 8.3), (&#39;英雄儿女&#39;, 7.6), (&#39;梅艳芳&#39;, 9.5), (&#39;沙丘&#39;, 9.0), (&#39;我和我的父辈&#39;, 8.9), (&#39;白毛女&#39;, 7.3), (&#39;长津湖&#39;, 9.8), (&#39;007&#39;, 6.5), (&#39;大嫂归来&#39;, 5.0)]
+[(&#39;007&#39;, 6.5), (&#39;大嫂归来&#39;, 5.0), (&#39;我和我的父辈&#39;, 8.9), (&#39;扬名立万&#39;, 8.3), (&#39;梅艳芳&#39;, 9.5), (&#39;沙丘&#39;, 9.0), (&#39;白毛女&#39;, 7.3), (&#39;英雄儿女&#39;, 7.6), (&#39;长津湖&#39;, 9.8)]
+[(&#39;长津湖&#39;, 9.8), (&#39;梅艳芳&#39;, 9.5), (&#39;沙丘&#39;, 9.0)]
+拓展2: 使用字典来存储上述信息:｛电影名:评分,……｝，按评分排序并输出排名前三电影。
+{&#39;扬名立万&#39;: 8.3, &#39;英雄儿女&#39;: 7.6, &#39;梅艳芳&#39;: 9.5, &#39;沙丘&#39;: 9.0, &#39;我和我的父辈&#39;: 8.9, &#39;白毛女&#39;: 7.3, &#39;长津湖&#39;: 9.8, &#39;007&#39;: 6.5, &#39;大嫂归来&#39;: 5.0}
+[&#39;007&#39;, &#39;大嫂归来&#39;, &#39;我和我的父辈&#39;, &#39;扬名立万&#39;, &#39;梅艳芳&#39;, &#39;沙丘&#39;, &#39;白毛女&#39;, &#39;英雄儿女&#39;, &#39;长津湖&#39;]
+[(&#39;007&#39;, 6.5), (&#39;大嫂归来&#39;, 5.0), (&#39;我和我的父辈&#39;, 8.9), (&#39;扬名立万&#39;, 8.3), (&#39;梅艳芳&#39;, 9.5), (&#39;沙丘&#39;, 9.0), (&#39;白毛女&#39;, 7.3), (&#39;英雄儿女&#39;, 7.6), (&#39;长津湖&#39;, 9.8)]
+[(&#39;长津湖&#39;, 9.8), (&#39;梅艳芳&#39;, 9.5), (&#39;沙丘&#39;, 9.0)]
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16426,7 +16478,7 @@ world hello
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Lady Gaga&#39;, &#39;G.E.M&#39;, &#39;Jay Zhou&#39;, &#39;Justin Bieber&#39;, &#39;Adele&#39;, &#39;Ed Sheeran&#39;}
+<pre>{&#39;Lady Gaga&#39;, &#39;Adele&#39;, &#39;Jay Zhou&#39;, &#39;Ed Sheeran&#39;, &#39;G.E.M&#39;, &#39;Justin Bieber&#39;}
 {&#39;Jay Zhou&#39;}
 {&#39;Lady Gaga&#39;, &#39;Adele&#39;}
 </pre>
@@ -16473,7 +16525,7 @@ world hello
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Lady Gaga&#39;, &#39;WanTing&#39;, &#39;Adele&#39;, &#39;G.E.M&#39;}
+<pre>{&#39;G.E.M&#39;, &#39;Lady Gaga&#39;, &#39;Adele&#39;, &#39;WanTing&#39;}
 </pre>
 </div>
 </div>
@@ -16531,7 +16583,7 @@ world hello
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;y&#39;, &#39;d&#39;, &#39;m&#39;, &#39;g&#39;, &#39;l&#39;, &#39;,&#39;, &#39;w&#39;, &#39;H&#39;, &#39;i&#39;, &#39;r&#39;, &#39; &#39;, &#39;!&#39;, &#39;e&#39;, &#39;o&#39;]
+<pre>[&#39;e&#39;, &#39;w&#39;, &#39;r&#39;, &#39;,&#39;, &#39;H&#39;, &#39;d&#39;, &#39;y&#39;, &#39;i&#39;, &#39; &#39;, &#39;!&#39;, &#39;g&#39;, &#39;l&#39;, &#39;m&#39;, &#39;o&#39;]
 [&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;r&#39;, &#39;d&#39;, &#39;,&#39;, &#39;m&#39;, &#39;y&#39;, &#39;g&#39;, &#39;i&#39;, &#39;!&#39;]
 </pre>
 </div>
@@ -16716,13 +16768,21 @@ None
 </ul>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 斐波那契数列</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="n">fib</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16730,45 +16790,565 @@ None
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>28. 使用pip工具查看当前已安装的Python扩展库的完整命令<code>pip list</code>，安装扩展库命令<code>pip install</code>库名。<ul>
-<li>pip list<div class="highlight"><pre><span></span>$ pip list
-Package              Version
--------------------- ---------
-appdirs              <span class="m">1</span>.4.4
-appnope              <span class="m">0</span>.1.2
-argon2-cffi          <span class="m">21</span>.3.0
-argon2-cffi-bindings <span class="m">21</span>.2.0
-attrs                <span class="m">21</span>.2.0
-...
-...
-</pre></div>
-</li>
-<li>pip install<div class="highlight"><pre><span></span>$ pip install pandas
-$ pip install wordcloud
-$ pip install jieba
-</pre></div>
-</li>
-</ul>
-</li>
+<li>28. 使用pip工具查看当前已安装的Python扩展库的完整命令<code>pip list</code>，安装扩展库命令<code>pip install</code>库名。</li>
 </ul>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="nb">list</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Package             Version
+------------------- -------
+appnope             0.1.2
+argon2-cffi         21.1.0
+attrs               21.2.0
+autopep8            1.5.7
+backcall            0.2.0
+bleach              4.1.0
+cffi                1.14.6
+cycler              0.11.0
+debugpy             1.5.0
+decorator           5.1.0
+defusedxml          0.7.1
+entrypoints         0.3
+fonttools           4.28.5
+GDAL                3.3.3
+ipykernel           6.4.1
+ipython             7.28.0
+ipython-genutils    0.2.0
+jedi                0.18.0
+jieba               0.42.1
+Jinja2              3.0.2
+jsonschema          4.1.0
+jupyter-client      7.0.6
+jupyter-core        4.8.1
+jupyterlab-pygments 0.1.2
+kiwisolver          1.3.2
+MarkupSafe          2.0.1
+matplotlib          3.5.1
+matplotlib-inline   0.1.3
+mistune             0.8.4
+nbclient            0.5.4
+nbconvert           6.2.0
+nbformat            5.1.3
+nest-asyncio        1.5.1
+notebook            6.4.4
+numpy               1.21.5
+packaging           21.0
+pandas              1.3.5
+pandocfilters       1.5.0
+parso               0.8.2
+pexpect             4.8.0
+pickleshare         0.7.5
+Pillow              8.4.0
+pip                 21.3.1
+prettytable         2.5.0
+prometheus-client   0.11.0
+prompt-toolkit      3.0.20
+ptyprocess          0.7.0
+pycodestyle         2.8.0
+pycparser           2.20
+pyecharts           1.9.1
+Pygments            2.10.0
+pyparsing           2.4.7
+pyrsistent          0.18.0
+python-dateutil     2.8.2
+pytz                2021.3
+pyzmq               22.3.0
+Send2Trash          1.8.0
+setuptools          59.0.1
+simplejson          3.17.6
+six                 1.16.0
+terminado           0.12.1
+testpath            0.5.0
+toml                0.10.2
+tornado             6.1
+traitlets           5.1.0
+wcwidth             0.2.5
+webencodings        0.5.1
+wheel               0.37.0
+wordcloud           1.8.1
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre><span class="ansi-yellow-fg">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span>
+Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (1.3.5)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2021.3)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.9/site-packages (from pandas) (1.21.5)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.9/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.16.0)
+Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>29. 文件打开模式：<code>r</code>, <code>w</code></li>
-<li>30. 读文本文件的方法：<code>read()</code>, <code>readlines()</code><ul>
-<li>对文件对象的迭代默认情况是<code>readlines()</code></li>
+<li>29. 文件打开模式<ul>
+<li><code>r</code> - 读模式</li>
+<li><code>w</code> - 写模式</li>
+<li><code>a</code> - 追加模式</li>
+</ul>
+</li>
+<li>30. 读文本文件的方法<ul>
+<li><code>read()</code> - 打开 file 并返回对应的 file object。</li>
+<li><code>readlines()</code> - 从流中读取并返回包含多行的列表。</li>
+<li>对文件对象的迭代默认情况是<code>readlines()</code><ul>
+<li>请注意使用 <code>for line in file: ...</code> 就足够对文件对象进行迭代了，可以不必调用 <code>file.readlines()</code>。</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>31. 写文本文件的方法：<code>writelines()</code></li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 打开文件的两种方式</span>
+<span class="c1"># 1 - open() 函数，需要 close() 函数配合关闭文件</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 2 - `with open` 语法确保文件一定会关闭</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+True
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>第14周的例子</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file1</span><span class="p">:</span>  <span class="c1"># 上下文管理器</span>
+    <span class="c1"># 一次性读取整个文件</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;read() 方法的结果.....&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">file1</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 将文件定位于文件头 1代表当前位置 ，2代表文件结尾</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file1</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="c1"># 按行读取文件</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;readline() 方法的结果.....&quot;</span><span class="p">)</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">file1</span><span class="o">.</span><span class="n">readline</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file1</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+
+    <span class="c1"># 以列表方式读入数据</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;以列表方式读入数据&quot;</span><span class="p">)</span>
+    <span class="n">file1</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">file1</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>read() 方法的结果.....
+&lt;class &#39;str&#39;&gt;
+line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+
+readline() 方法的结果.....
+&lt;class &#39;str&#39;&gt;
+line 2 - 兴尽晚回舟, 误入藕花深处。
+
+以列表方式读入数据
+&lt;class &#39;list&#39;&gt;
+[&#39;line 1 - 常记溪亭日暮, 沉醉不知归路。\n&#39;, &#39;line 2 - 兴尽晚回舟, 误入藕花深处。\n&#39;, &#39;line 3 - 争渡, 争渡, 惊起一滩鸥鹭。\n&#39;]
+3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>迭代文件 - 对文件对象的迭代默认情况是<code>readlines()</code>。</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>line 1 - 常记溪亭日暮, 沉醉不知归路。
+line 2 - 兴尽晚回舟, 误入藕花深处。
+line 3 - 争渡, 争渡, 惊起一滩鸥鹭。
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>写文件</li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># 创建一个临时文件</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">8</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># writelines() - 注意换行符</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">([</span><span class="s1">&#39;《盗梦空间》&#39;</span><span class="p">,</span> <span class="s1">&#39;《无间道》&#39;</span><span class="p">,</span> <span class="s1">&#39;《活着》&#39;</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">([</span><span class="s1">&#39;《2046》</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;《重慶森林》</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;《花樣年華》</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">])</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># 删除临时文件</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>《盗梦空间》《无间道》《活着》《2046》
+《重慶森林》
+《花樣年華》
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
 <li>32. CSV库，json库读写文件操作的基本语法</li>
-<li>33. 上下文管理器的应用：<code>with open() as f:</code></li>
+</ul>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 方法1 按文本方式读取csv文件</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+
+<span class="c1"># 方法2 用CSV模块来读取csv文件</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;======使用csv读取文件&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+    <span class="n">aList</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">aList</span><span class="p">)</span>
+
+<span class="c1"># 用CSV模块来写csv文件</span>
+<span class="n">blist</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;佛山&#39;</span><span class="p">,</span> <span class="s1">&#39;101.5&#39;</span><span class="p">,</span> <span class="s1">&#39;120.7&#39;</span><span class="p">,</span> <span class="s1">&#39;121.4&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;江门&#39;</span><span class="p">,</span> <span class="s1">&#39;101.5&#39;</span><span class="p">,</span> <span class="s1">&#39;120.7&#39;</span><span class="p">,</span> <span class="s1">&#39;121.4&#39;</span><span class="p">]]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/test.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">blist</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;佛山,101.5,120.7,121.4\n&#39;, &#39;江门,101.5,120.7,121.4\n&#39;]
+======使用csv读取文件
+[[&#39;佛山&#39;, &#39;101.5&#39;, &#39;120.7&#39;, &#39;121.4&#39;], [&#39;江门&#39;, &#39;101.5&#39;, &#39;120.7&#39;, &#39;121.4&#39;]]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/beijing_aqi.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">cityList</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cityList</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cityList</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cityList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="sd">&quot;&quot;&quot;1 使用列表对象本身来进行排序&quot;&quot;&quot;</span>
+    <span class="c1"># cityList.sort(key = lambda  x:x[&#39;aqi&#39;])</span>
+    <span class="c1"># print(cityList)</span>
+    <span class="sd">&quot;&quot;&quot;2 使用内置函数sorted进行排序&quot;&quot;&quot;</span>
+    <span class="n">sortedAQI</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cityList</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;aqi&#39;</span><span class="p">])</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./files/aqi_top5.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp2</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">sortedAQI</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">fp2</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;list&#39;&gt;
+13
+{&#39;aqi&#39;: 47, &#39;area&#39;: &#39;北京&#39;, &#39;pm2_5&#39;: 32, &#39;pm2_5_24h&#39;: 33, &#39;position_name&#39;: &#39;万寿西宫&#39;, &#39;primary_pollutant&#39;: None, &#39;quality&#39;: &#39;优&#39;, &#39;station_code&#39;: &#39;1001A&#39;, &#39;time_point&#39;: &#39;2017-07-29T14:00:00Z&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>33. 上下文管理器的应用<ul>
+<li><code>with open() as f:</code> - 参见 29-31 知识点代码</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -16783,13 +17363,13 @@ $ pip install jieba
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># 唯一的闭区间[0, 9]</span>
-<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>        <span class="c1"># 同样的seed</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>            <span class="c1"># 同样的seed</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1"># 得到同样的随机数</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
@@ -16823,7 +17403,7 @@ $ pip install jieba
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -16872,7 +17452,7 @@ $ pip install jieba
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO</span>

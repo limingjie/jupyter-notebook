@@ -17,7 +17,7 @@ jupyter nbconvert --to markdown python.ipynb
 # Generate Tex
 jupyter nbconvert --to latex python.ipynb
 
-# Enable Chinese
+# Enable CJK
 # Note: sed MacOS syntax
 sed -i '' '2i\
     \\usepackage[slantfont, boldfont]{xeCJK}\
