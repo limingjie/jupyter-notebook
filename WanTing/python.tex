@@ -1,5 +1,4 @@
 \documentclass[11pt]{article}
-
     \usepackage[slantfont, boldfont]{xeCJK}
     \setCJKmainfont{Sarasa UI SC}
     \usepackage[breakable]{tcolorbox}
@@ -637,40 +636,34 @@ Hello World!
 \PY{c+c1}{\PYZsh{} `//` \PYZhy{} 整除}
 \PY{c+c1}{\PYZsh{} `\PYZpc{}` \PYZhy{} 取余}
 \PY{c+c1}{\PYZsh{} 100 / 7 = 14 ... 2}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{100} \PY{o}{/} \PY{l+m+mi}{7}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{100} \PY{o}{/}\PY{o}{/} \PY{l+m+mi}{7}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{100} \PY{o}{\PYZpc{}} \PY{l+m+mi}{7}\PY{p}{)}
+\PY{n}{a} \PY{o}{=} \PY{l+m+mi}{100} \PY{o}{/} \PY{l+m+mi}{7}
+\PY{n}{b} \PY{o}{=} \PY{l+m+mi}{100} \PY{o}{/}\PY{o}{/} \PY{l+m+mi}{7}
+\PY{n}{c} \PY{o}{=} \PY{l+m+mi}{100} \PY{o}{\PYZpc{}} \PY{l+m+mi}{7}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-14.285714285714286
-14
-2
+14.285714285714286, 14, 2
     \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} `in` \PYZhy{} 字符串、列表、元组、集合、字典等成员资格的判断}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abc}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}    \PY{c+c1}{\PYZsh{} 字符串}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lo}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} 字符串}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 列表}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 元组}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 集合}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{)}              \PY{c+c1}{\PYZsh{} 字典键}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} 字典值}
+\PY{n}{a} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abc}\PY{l+s+s1}{\PYZsq{}}    \PY{c+c1}{\PYZsh{} 字符串}
+\PY{n}{b} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lo}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} 字符串}
+\PY{n}{c} \PY{o}{=} \PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}  \PY{c+c1}{\PYZsh{} 列表}
+\PY{n}{d} \PY{o}{=} \PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 元组}
+\PY{n}{e} \PY{o}{=} \PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}  \PY{c+c1}{\PYZsh{} 集合}
+\PY{n}{f} \PY{o}{=} \PY{l+m+mi}{1} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}              \PY{c+c1}{\PYZsh{} 字典键}
+\PY{n}{g} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} 字典值}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{g}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-True
-True
-True
-True
-True
-True
-True
+True, True, True, True, True, True, True
     \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -693,6 +686,556 @@ True
 100 + 10 -> 110 110
 100 // 7 -> 14 14
     \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  11. 内置函数
+\end{itemize}
+
+    \begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1879}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8121}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+函数
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+用途
+\end{minipage} \\
+\midrule
+\endhead
+\texttt{pow(base,\ exp)} & base \^{} exp \\
+\texttt{len(s)} & 返回对象的长度（元素个数）。实参可以是序列（如
+string、bytes、tuple、list 或 range 等）或集合（如 dictionary、set 或
+frozen set 等）。 \\
+\texttt{eval(expression)} & 表达式解析参数 expression 并作为 Python
+表达式进行求值。 \\
+\texttt{sum(iterable,\ start\ =\ 0)} & 从 start 开始自左向右对 iterable
+的项求和并返回总计值。 iterable 的项通常为数字，而 start
+值则不允许为字符串。 \\
+\texttt{int(x,\ base=10)} & 返回一个基于数字或字符串 x
+构造的整数对象，或者在未给出参数时返回 0。 \\
+\texttt{float(x)} & 返回从数字或字符串 x 生成的浮点数。 \\
+\texttt{str(object=\textquotesingle{}\textquotesingle{})} & 返回一个 str
+版本的 object 。 \\
+\texttt{list({[}iterable{]})} & 可以用多种方式构建列表 \\
+\texttt{tuple({[}iterable{]})} & 可以用多种方式构建元组 \\
+\texttt{set({[}iterable{]})} & 返回一个新的 set 或 frozenset
+对象，其元素来自于 iterable。 \\
+\texttt{dict()} &
+返回一个新的字典，基于可选的位置参数和可能为空的关键字参数集来初始化。 \\
+\texttt{zip(*iterables,\ strict=False)} &
+在多个迭代器上并行迭代，从每个迭代器返回一个数据项组成元组。 \\
+\texttt{enumerate(iterable,\ start=0)} & 返回一个枚举对象。iterable
+必须是一个序列，或 iterator，或其他支持迭代的对象。 \\
+\bottomrule
+\end{longtable}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{b} \PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{\PYZpc{}} \PY{l+m+mi}{7}
+\PY{n}{c} \PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+100, 2, 2
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abc}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}                           \PY{c+c1}{\PYZsh{} 字符串}
+\PY{n}{b} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}                       \PY{c+c1}{\PYZsh{} 列表}
+\PY{n}{c} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}                       \PY{c+c1}{\PYZsh{} 元组}
+\PY{n}{d} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{)}                       \PY{c+c1}{\PYZsh{} 集合}
+\PY{n}{e} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{foo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bar}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{)}     \PY{c+c1}{\PYZsh{} 元组的列表}
+\PY{n}{f} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{foo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bar}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 元组的列表的第0个元素}
+\PY{n}{g} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{foo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bar}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 元组的列表的第1个元素}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{g}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+3, 3, 3, 3, 2, 3, 2
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{x} \PY{o}{=} \PY{n+nb}{eval}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{100}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{y} \PY{o}{=} \PY{n+nb}{eval}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3.1415926}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{z} \PY{o}{=} \PY{n+nb}{eval}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x * y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+100, 3.1415926, 314.15926
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 元组}
+\PY{n}{b} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 列表}
+\PY{n}{c} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 集合}
+\PY{n}{d} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{)}         \PY{c+c1}{\PYZsh{} 字典键}
+\PY{n}{e} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 字典值}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{, }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+6, 6, 6, 6, 6
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{tuple}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{set}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{d} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{d}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{d}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[1, 2, 3]
+(1, 2, 3)
+\{1, 2, 3\}
+[1, 2, 3]
+['one', 'two', 'three']
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} 构建字典}
+\PY{n}{a} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{one}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{two}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{three}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
+\PY{n}{b} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}
+\PY{n}{c} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n}{d} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{e} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{2}\PY{p}{\PYZcb{}}\PY{p}{)}
+\PY{n}{f} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{two}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{sep}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'one': 1, 'two': 2, 'three': 3\}
+\{'one': 1, 'two': 2, 'three': 3\}
+\{'one': 1, 'two': 2, 'three': 3\}
+\{'two': 2, 'one': 1, 'three': 3\}
+\{'three': 3, 'one': 1, 'two': 2\}
+\{'one': 1, 'three': 3, 'two': 2\}
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n}{b} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{enumerate}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{n}{c} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{enumerate}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{one}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{two}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{three}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[(1, 'one'), (2, 'two'), (3, 'three')]
+[(0, 'one'), (1, 'two'), (2, 'three')]
+[(1, 'one'), (2, 'two'), (3, 'three')]
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  12. 字符串的正向反向索引、切片（左闭右开）的应用
+\end{itemize}
+
+    \begin{longtable}[]{@{}rcccccccccccc@{}}
+\toprule
+Index from front & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+\midrule
+\endhead
+Index from back & -12 & -11 & -10 & -9 & -8 & -7 & -6 & -5 & -4 & -3 &
+-2 & -1 \\
+String & a & b & c & d & e & f & g & h & i & j & k & l \\
+\bottomrule
+\end{longtable}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}
+\PY{n}{b} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{]}
+\PY{n}{c} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{7}\PY{p}{]}
+\PY{n}{d} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{e} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{f} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{p}{]}
+\PY{n}{g} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
+\PY{n}{h} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+\PY{n}{i} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{j} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
+\PY{n}{k} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+\PY{n}{l} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abcdefghijkl}\PY{l+s+s1}{\PYZsq{}}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}  \PY{c+c1}{\PYZsh{} 从开始到结尾，\PYZhy{} 代表倒序，步长2}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e}\PY{p}{,} \PY{n}{f}\PY{p}{,} \PY{n}{g}\PY{p}{,} \PY{n}{h}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{l}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+d
+j
+defg
+defghij
+cdefghij
+defghijkl
+abc
+abcdefghijkl
+dfhj
+dfhj
+lkjihgfedcba
+ljhfdb
+    \end{Verbatim}
+
+    \begin{itemize}
+\item
+  13. 字符串方法 - \texttt{split()}（只要求能读懂程序）
+
+  \texttt{str.split(sep=None,\ maxsplit=-\ 1)} \textgreater{}
+  返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 如果给出了
+  maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1
+  个元素）。 如果 maxsplit 未指定或为
+  -1，则不限制拆分次数（进行所有可能的拆分）。
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{strEng} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{the quick brown fox jumps over the lazy dog}\PY{l+s+s1}{\PYZsq{}}
+\PY{n}{strChn} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{敏捷的棕色狐狸跳过了懒狗}\PY{l+s+s1}{\PYZsq{}}
+\PY{n}{a} \PY{o}{=} \PY{n}{strEng}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}
+\PY{n}{b} \PY{o}{=} \PY{n}{strEng}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{c} \PY{o}{=} \PY{n}{strChn}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}
+\PY{n}{d} \PY{o}{=} \PY{n}{strChn}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{的}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{sep} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+['the quick br', 'wn f', 'x jumps ', 'ver the lazy d', 'g']
+['敏捷的棕色狐狸跳过了懒狗']
+['敏捷', '棕色狐狸跳过了懒狗']
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  14. 程序控制结构
+
+  \begin{itemize}
+  \tightlist
+  \item
+    分支结构（单分支、双分支、多分支）
+  \item
+    循环结构的相关语法
+  \item
+    应用
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{if\ ...\ elif\ ...\ else}
+    \item
+      \texttt{for}
+    \item
+      \texttt{while}
+    \item
+      \texttt{break} \& \texttt{continue}
+    \item
+      \texttt{for\ ...\ else} / \texttt{while\ ...\ else}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{22}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{num} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:2\PYZcb{}}\PY{l+s+s1}{ is a }\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{num}\PY{p}{)}\PY{p}{,} \PY{n}{end} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{k}{if} \PY{n}{num} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Positive number}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{elif} \PY{n}{num} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Zero}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{else}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Negative number}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+-3 is a Negative number
+-2 is a Negative number
+-1 is a Negative number
+ 0 is a Zero
+ 1 is a Positive number
+ 2 is a Positive number
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{23}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
+    \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{n} \PY{o}{\PYZpc{}} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{n} \PY{o}{/}\PY{o}{/} \PY{n}{x}\PY{p}{)}
+            \PY{k}{break}
+    \PY{k}{else}\PY{p}{:}
+        \PY{c+c1}{\PYZsh{} loop fell through without finding a factor}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{is a prime number}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2 is a prime number
+3 is a prime number
+4 equals 2 * 2
+5 is a prime number
+6 equals 2 * 3
+7 is a prime number
+8 equals 2 * 4
+9 equals 3 * 3
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{24}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{genres} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pop}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rock}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{jazz}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\PY{k}{for} \PY{n}{genre} \PY{o+ow}{in} \PY{n}{genres}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{I like}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{genre}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+I like pop
+I like rock
+I like jazz
+    \end{Verbatim}
+
+    \begin{itemize}
+\item
+  \texttt{break} 的工作方式
+
+  \begin{figure}
+  \centering
+  \includegraphics{./images/break.png}
+  \caption{break}
+  \end{figure}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{val} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{string}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+    \PY{k}{if} \PY{n}{val} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{i}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+        \PY{k}{break}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{val}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The end}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+s
+t
+r
+The end
+    \end{Verbatim}
+
+    \begin{itemize}
+\item
+  \texttt{continue} 的工作方式
+
+  \begin{figure}
+  \centering
+  \includegraphics{./images/continue.png}
+  \caption{continue}
+  \end{figure}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{26}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{for} \PY{n}{val} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{string}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+    \PY{k}{if} \PY{n}{val} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{i}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+        \PY{k}{continue}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{val}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The end}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+s
+t
+r
+n
+g
+The end
+    \end{Verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{27}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{l+m+mi}{0}
+\PY{k}{while} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{l+m+mi}{30}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+    \PY{k}{if} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{l+m+mi}{3}\PY{p}{:}
+        \PY{n}{a} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{elif} \PY{n}{a} \PY{o}{\PYZlt{}} \PY{l+m+mi}{30}\PY{p}{:}
+        \PY{n}{a} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{10}
+    \PY{k}{else}\PY{p}{:}
+        \PY{k}{break}
+\PY{k}{else}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{WoW}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+1
+2
+3
+13
+23
+WoW
+    \end{Verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  15. 布尔表达式的使用
+\end{itemize}
+
+    \begin{longtable}[]{@{}ll@{}}
+\toprule
+运算 & 含意 \\
+\midrule
+\endhead
+\texttt{\textless{}} & 严格小于 \\
+\texttt{\textless{}=} & 小于或等于 \\
+\texttt{\textgreater{}} & 严格大于 \\
+\texttt{\textgreater{}=} & 大于或等于 \\
+\texttt{==} & 等于 \\
+\texttt{!=} & 不等于 \\
+\texttt{is} & 对象标识 \\
+\texttt{is\ not} & 否定的对象标识 \\
+\bottomrule
+\end{longtable}
+
+    \begin{longtable}[]{@{}ll@{}}
+\toprule
+运算 & 结果 \\
+\midrule
+\endhead
+\texttt{x\ or\ y} & if x is false, then y, else x \\
+\texttt{x\ and\ y} & if x is false, then x, else y \\
+\texttt{not\ x} & if x is false, then True, else False \\
+\bottomrule
+\end{longtable}
+
+    \begin{itemize}
+\tightlist
+\item
+  16.
+  循环语句中可迭代的结构：range、字符串、列表、元组、集合、字典、文件
+\item
+  17. 列表操作的方法
+
+  \begin{itemize}
+  \tightlist
+  \item
+    append()
+  \item
+    pop()
+  \end{itemize}
+\item
+  18.
+  列表的排序方法\texttt{sort()}以及内置函数\texttt{sorted()}的应用场合、语法、排序规则的指定（lambda函数）、返回值等
+\item
+  19. 元组的非正规写法
+
+  \begin{itemize}
+  \tightlist
+  \item
+    多变量赋值
+  \item
+    两变量值交换
+  \end{itemize}
+\item
+  20. 元组的基本要求和操作
+
+  \begin{itemize}
+  \tightlist
+  \item
+    利用列表里面嵌套元组完成相应应用描述，并能进行操作
+  \end{itemize}
+\item
+  21. 集合运算符：\texttt{\&}, \texttt{\textbar{}},
+  \texttt{-}（只要求能读懂程序）
+\item
+  22. 集合操作的方法：\texttt{add()}
+\item
+  23. 集合的去除重复工作
+\item
+  24. 字典添加新的键值对
+\item
+  25. 字典中键、值、键值对的获取 \texttt{keys()}, \texttt{values()},
+  \texttt{items()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    对字典元素的迭代默认情况是对键的迭代
+  \item
+    能够用字典描述特定键值对类型的应用并操作
+  \end{itemize}
+\item
+  26. 字典的\texttt{get()}方法的作用及使用
+\item
+  27. 函数定义及简单参数传递
+\item
+  28.
+  使用pip工具查看当前已安装的Python扩展库的完整命令\texttt{pip\ list}，安装扩展库命令\texttt{pip\ install}库名。
+\item
+  29. 文件打开模式：\texttt{r}, \texttt{w}
+\item
+  30. 读文本文件的方法：\texttt{read()}, \texttt{readlines()}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    对文件对象的迭代默认情况是\texttt{readlines()}
+  \end{itemize}
+\item
+  31. 写文本文件的方法：\texttt{writelines()}
+\item
+  32. CSV库，json库读写文件操作的基本语法
+\item
+  33. 上下文管理器的应用：\texttt{with\ open()\ as\ f:}
+\item
+  34. 第三方库random的方法：\texttt{randint()}
+\item
+  35. 可视化：绘制饼图、直方图、多种折线图、散点图
+\end{itemize}
 
 
     % Add a bibliography block to the postdoc
