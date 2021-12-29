@@ -2,12 +2,15 @@
 
 ## 知识点
 
-- 1\. Python程序需要**描述数据**和**操作数据**。
+- 1\. Python程序需要**描述数据**和**操作数据**
 - 2\. Python程序区分大小写
-- 3\. 标识符的基本要求 - 驼峰法则(`camelCase`) / 匈牙利法则(`Hungarian notation`)
-  - `iPhone`
-  - `eBay`
-  - `johnSmith`
+  - `ABC` / `Abc` / `abc` 是不同的标识符。
+- 3\. 标识符的基本要求
+  - 驼峰法则(`camelCase`) / 匈牙利法则(`Hungarian notation`)
+  - 例如:
+    - `iPhone`
+    - `eBay`
+    - `johnSmith`
 - 4\. 变量赋值及相应的类型(主要的基本数据类型)
 
 | 类型           | 典型值          |
@@ -367,9 +370,8 @@ print(a, b, c, d, e, f, g, h, i, j, k, l, sep = '\n')
 
 
 - 13\. 字符串方法 - `split()`（只要求能读懂程序）
-
-  `str.split(sep=None, maxsplit=- 1)`
-  > 返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 如果给出了 maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1 个元素）。 如果 maxsplit 未指定或为 -1，则不限制拆分次数（进行所有可能的拆分）。
+  - `str.split(sep=None, maxsplit=- 1)`
+    > 返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 如果给出了 maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1 个元素）。 如果 maxsplit 未指定或为 -1，则不限制拆分次数（进行所有可能的拆分）。
 
 
 ```python
@@ -395,8 +397,11 @@ print(a, b, c, d, sep = '\n')
     - `if ... elif ... else`
     - `for`
     - `while`
-    - `break` & `continue`
     - `for ... else` / `while ... else`
+    - `break`
+      - ![break](./images/break.png "`break` 的工作方式")
+    - `continue`
+      - ![continue](./images/continue.png "`continue` 的工作方式")
 
 
 ```python
@@ -452,10 +457,6 @@ for genre in genres:
     I like jazz
 
 
-- `break` 的工作方式
-
-  ![break](./images/break.png "`break` 的工作方式")
-
 
 ```python
 for val in "string":
@@ -471,10 +472,6 @@ print("The end")
     r
     The end
 
-
-- `continue` 的工作方式
-
-  ![continue](./images/continue.png "`continue` 的工作方式")
 
 
 ```python
@@ -520,6 +517,18 @@ else:
 
 - 15\. 布尔表达式的使用
 
+- 15.1 布尔运算
+
+这些属于布尔运算，按优先级升序排列:
+
+| 运算      | 结果                                 |
+| --------- | ------------------------------------ |
+| `x or y`  | if x is false, then y, else x        |
+| `x and y` | if x is false, then x, else y        |
+| `not x`   | if x is false, then True, else False |
+
+- 15.2 比较运算
+
 | 运算     | 含意           |
 | -------- | -------------- |
 | `<`      | 严格小于       |
@@ -531,14 +540,7 @@ else:
 | `is`     | 对象标识       |
 | `is not` | 否定的对象标识 |
 
-| 运算      | 结果                                 |
-| --------- | ------------------------------------ |
-| `x or y`  | if x is false, then y, else x        |
-| `x and y` | if x is false, then x, else y        |
-| `not x`   | if x is false, then True, else False |
-
 - 16\. 循环语句中可迭代的结构：range、字符串、列表、元组、集合、字典、文件
-
   - range 类型表示不可变的数字序列，通常用于在 for 循环中循环指定的次数。
     ```python
     range(stop)
@@ -694,9 +696,9 @@ foreignGirls = girls - chinese
 print(singers, chineseBoys, foreignGirls, sep = '\n')
 ```
 
-    {'Lady Gaga', 'Adele', 'Jay Zhou', 'Ed Sheeran', 'G.E.M', 'Justin Bieber'}
+    {'Adele', 'Justin Bieber', 'Lady Gaga', 'Ed Sheeran', 'G.E.M', 'Jay Zhou'}
     {'Jay Zhou'}
-    {'Lady Gaga', 'Adele'}
+    {'Adele', 'Lady Gaga'}
 
 
 - 22\. 集合操作的方法：`add()`
@@ -708,7 +710,7 @@ girls.add('WanTing')
 print(girls)
 ```
 
-    {'G.E.M', 'Lady Gaga', 'Adele', 'WanTing'}
+    {'Adele', 'G.E.M', 'WanTing', 'Lady Gaga'}
 
 
 - 23\. 集合的去除重复工作
@@ -733,7 +735,7 @@ for e in l:
 print(unique)
 ```
 
-    ['e', 'w', 'r', ',', 'H', 'd', 'y', 'i', ' ', '!', 'g', 'l', 'm', 'o']
+    ['o', 'm', ',', 'l', '!', 'e', 'y', ' ', 'd', 'r', 'i', 'w', 'g', 'H']
     ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
 
 
@@ -779,6 +781,55 @@ for k, v in d.items():
     the number of whale  =  5
     the number of shark  =  3
     the number of python = 19
+
+
+- 25.1 词云
+
+
+```python
+"""
+  程序功能：实现词频的统计
+"""
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt  # 绘制图像的模块
+import jieba  # 分词模块
+
+sentence = "今天全没月光我知道不妙早上小心出门贵翁的眼色便怪：似乎怕我似乎想害我还有七八个人交头接耳的议论我张着嘴对我笑了一笑我便从头直冷到脚根晓"
+wordList = jieba.lcut(sentence)
+
+wordDic = {}  # 定义一个空字典
+
+for word in wordList:
+    if word in wordDic.keys():
+        wordDic[word] = wordDic[word] + 1
+    else:
+        wordDic[word] = 1
+print(wordDic)
+
+wordcloud = WordCloud(
+    # 设置字体，不然会出现口字乱码，文字的路径是电脑的字体一般路径，可以换成别的
+    font_path="~/Library/Fonts/sarasa-ui-sc-regular.ttf",
+    # 设置了背景，宽高
+    background_color="white", width=1000, height=880).generate_from_frequencies(wordDic)
+
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+```
+
+    Building prefix dict from the default dictionary ...
+    Loading model from cache /var/folders/p9/ym64x6r96qbbcfswwvcnnn5m0000gn/T/jieba.cache
+    Loading model cost 0.706 seconds.
+    Prefix dict has been built successfully.
+
+
+    {'今天': 1, '全没': 1, '月光': 1, '我': 5, '知道': 1, '不妙': 1, '早上': 1, '小心': 1, '出门': 1, '贵翁': 1, '的': 2, '眼色': 1, '便怪': 1, '：': 1, '似乎': 2, '怕': 1, '想害': 1, '还有': 1, '七八个': 1, '人': 1, '交头接耳': 1, '议论': 1, '我张': 1, '着': 1, '嘴': 1, '对': 1, '笑': 1, '了': 1, '一笑': 1, '便': 1, '从头': 1, '直冷到': 1, '脚': 1, '根晓': 1}
+
+
+
+    
+![png](python_files/python_66_2.png)
+    
 
 
 - 26\. 字典的`get()`方法的作用及使用
@@ -827,77 +878,93 @@ fib(2000)
 pip list
 ```
 
-    Package             Version
-    ------------------- -------
-    appnope             0.1.2
-    argon2-cffi         21.1.0
-    attrs               21.2.0
-    autopep8            1.5.7
-    backcall            0.2.0
-    bleach              4.1.0
-    cffi                1.14.6
-    cycler              0.11.0
-    debugpy             1.5.0
-    decorator           5.1.0
-    defusedxml          0.7.1
-    entrypoints         0.3
-    fonttools           4.28.5
-    GDAL                3.3.3
-    ipykernel           6.4.1
-    ipython             7.28.0
-    ipython-genutils    0.2.0
-    jedi                0.18.0
-    jieba               0.42.1
-    Jinja2              3.0.2
-    jsonschema          4.1.0
-    jupyter-client      7.0.6
-    jupyter-core        4.8.1
-    jupyterlab-pygments 0.1.2
-    kiwisolver          1.3.2
-    MarkupSafe          2.0.1
-    matplotlib          3.5.1
-    matplotlib-inline   0.1.3
-    mistune             0.8.4
-    nbclient            0.5.4
-    nbconvert           6.2.0
-    nbformat            5.1.3
-    nest-asyncio        1.5.1
-    notebook            6.4.4
-    numpy               1.21.5
-    packaging           21.0
-    pandas              1.3.5
-    pandocfilters       1.5.0
-    parso               0.8.2
-    pexpect             4.8.0
-    pickleshare         0.7.5
-    Pillow              8.4.0
-    pip                 21.3.1
-    prettytable         2.5.0
-    prometheus-client   0.11.0
-    prompt-toolkit      3.0.20
-    ptyprocess          0.7.0
-    pycodestyle         2.8.0
-    pycparser           2.20
-    pyecharts           1.9.1
-    Pygments            2.10.0
-    pyparsing           2.4.7
-    pyrsistent          0.18.0
-    python-dateutil     2.8.2
-    pytz                2021.3
-    pyzmq               22.3.0
-    Send2Trash          1.8.0
-    setuptools          59.0.1
-    simplejson          3.17.6
-    six                 1.16.0
-    terminado           0.12.1
-    testpath            0.5.0
-    toml                0.10.2
-    tornado             6.1
-    traitlets           5.1.0
-    wcwidth             0.2.5
-    webencodings        0.5.1
-    wheel               0.37.0
-    wordcloud           1.8.1
+    Package              Version
+    -------------------- ---------
+    appdirs              1.4.4
+    appnope              0.1.2
+    argon2-cffi          21.3.0
+    argon2-cffi-bindings 21.2.0
+    attrs                21.2.0
+    autopep8             1.5.7
+    backcall             0.2.0
+    black                21.9b0
+    bleach               4.1.0
+    cffi                 1.15.0
+    click                8.0.1
+    cycler               0.11.0
+    debugpy              1.5.0
+    decorator            5.1.0
+    defusedxml           0.7.1
+    entrypoints          0.3
+    fonttools            4.28.5
+    importlib-metadata   4.10.0
+    ipykernel            6.4.1
+    ipython              7.28.0
+    ipython-genutils     0.2.0
+    jedi                 0.18.0
+    jieba                0.42.1
+    Jinja2               3.0.3
+    jsonschema           4.3.2
+    jupyter-client       7.0.6
+    jupyter-core         4.8.1
+    jupyterlab-pygments  0.1.2
+    kiwisolver           1.3.2
+    MarkupSafe           2.0.1
+    matplotlib           3.5.1
+    matplotlib-inline    0.1.3
+    mistune              0.8.4
+    mypy-extensions      0.4.3
+    nbclient             0.5.9
+    nbconvert            6.3.0
+    nbformat             5.1.3
+    nest-asyncio         1.5.1
+    notebook             6.4.6
+    numpy                1.21.5
+    packaging            21.3
+    pandas               1.3.5
+    pandocfilters        1.5.0
+    parso                0.8.2
+    pathspec             0.9.0
+    pexpect              4.8.0
+    pickleshare          0.7.5
+    Pillow               8.4.0
+    pip                  21.3.1
+    platformdirs         2.3.0
+    prettytable          2.5.0
+    prometheus-client    0.12.0
+    prompt-toolkit       3.0.20
+    ptyprocess           0.7.0
+    pycodestyle          2.8.0
+    pycparser            2.21
+    pyecharts            1.9.1
+    pyee                 8.2.2
+    Pygments             2.10.0
+    pyparsing            3.0.6
+    pyppeteer            0.2.6
+    pyrsistent           0.18.0
+    python-dateutil      2.8.2
+    pytz                 2021.3
+    pyzmq                22.3.0
+    regex                2021.8.28
+    Send2Trash           1.8.0
+    setuptools           59.0.1
+    simplejson           3.17.6
+    six                  1.16.0
+    terminado            0.12.1
+    testpath             0.5.0
+    toml                 0.10.2
+    tomli                1.2.1
+    tornado              6.1
+    tqdm                 4.62.3
+    traitlets            5.1.0
+    typing-extensions    3.10.0.2
+    urllib3              1.26.7
+    wcwidth              0.2.5
+    webencodings         0.5.1
+    websockets           9.1
+    wheel                0.37.0
+    wordcloud            1.8.1
+    zipp                 3.6.0
     Note: you may need to restart the kernel to use updated packages.
 
 
@@ -905,15 +972,6 @@ pip list
 ```python
 pip install pandas
 ```
-
-    [33mDEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621[0m
-    Requirement already satisfied: pandas in /usr/local/lib/python3.9/site-packages (1.3.5)
-    Requirement already satisfied: pytz>=2017.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2021.3)
-    Requirement already satisfied: python-dateutil>=2.7.3 in /usr/local/lib/python3.9/site-packages (from pandas) (2.8.2)
-    Requirement already satisfied: numpy>=1.17.3 in /usr/local/lib/python3.9/site-packages (from pandas) (1.21.5)
-    Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.9/site-packages (from python-dateutil>=2.7.3->pandas) (1.16.0)
-    Note: you may need to restart the kernel to use updated packages.
-
 
 - 29\. 文件打开模式
   - `r` - 读模式
@@ -1038,18 +1096,19 @@ os.remove(filename)
     《花樣年華》
 
 
-- 32\. CSV库，json库读写文件操作的基本语法
+- 32\. CSV库，JSON库读写文件操作的基本语法
 
 
 ```python
 # 方法1 按文本方式读取csv文件
+print("# 按文本方式读取csv文件")
 with open('./files/test.csv', 'r', encoding='utf-8') as fp:
     print(fp.readlines())
 
 # 方法2 用CSV模块来读取csv文件
 import csv
 
-print("======使用csv读取文件")
+print("# 用CSV模块来读取csv文件")
 with open('./files/test.csv', 'r', encoding='utf-8') as fp:
     reader = csv.reader(fp)
     aList = list(reader)
@@ -1061,10 +1120,12 @@ with open('./files/test.csv', 'a+') as f:
     writer = csv.writer(f, lineterminator='\n')
     for item in blist:
         writer.writerow(item)
+
 ```
 
+    # 按文本方式读取csv文件
     ['佛山,101.5,120.7,121.4\n', '江门,101.5,120.7,121.4\n']
-    ======使用csv读取文件
+    # 用CSV模块来读取csv文件
     [['佛山', '101.5', '120.7', '121.4'], ['江门', '101.5', '120.7', '121.4']]
 
 
@@ -1124,12 +1185,287 @@ print(cards)
     ['9', 'K', '6', '2', '3', '5', 'J', '4', 'A', '7', 'Q', '8']
 
 
-- 35\. 可视化：绘制饼图、直方图、多种折线图、散点图
+- 35\. 可视化
+- 35.1 绘制饼图
 
 
 ```python
-# TODO
+import matplotlib.pyplot as plt
+
+plt.rcParams['font.sans-serif'] = ['Sarasa UI SC']
+plt.rcParams['axes.unicode_minus'] = False
+gradeCount = [20, 40, 10, 5]  # 分别代表优秀、良好、及格、不及格人数
+colors = ['red', 'green', 'yellow', 'blue']  # 四种不同的颜色
+explode = [0, 0.1, 0, 0.1]
+labels = ['优秀', '良好', '及格', '不及格']
+
+plt.pie(gradeCount, explode = explode, labels = labels)
+plt.legend('best')
+
+plt.show()
 ```
+
+
+    
+![png](python_files/python_90_0.png)
+    
+
+
+- 35.2 直方图
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+
+# 设置matplotlib正常显示中文和负号
+matplotlib.rcParams['font.sans-serif'] = ['Sarasa UI SC']
+matplotlib.rcParams['axes.unicode_minus'] = False
+# 随机生成（10000,）服从正态分布的数据
+data = np.random.randn(10000)
+
+plt.hist(data, bins=40, facecolor="blue", edgecolor="black", alpha=0.7)
+# 显示横轴标签
+plt.xlabel("区间")
+# 显示纵轴标签
+plt.ylabel("频数/频率")
+# 显示图标题
+plt.title("频数/频率分布直方图")
+plt.show()
+```
+
+
+    
+![png](python_files/python_92_0.png)
+    
+
+
+- 35.3 多种折线图
+
+
+```python
+# 1 导入可视化模块
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+plt.rcParams['font.sans-serif'] = ['Sarasa UI SC']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 2 产生数据
+x = np.arange(0, 2 * math.pi, 0.1)
+y = np.sin(x)
+y2 = np.cos(x)
+print(x)
+print(y)
+
+# 绘制线图
+plt.plot(x, y, 'r-.', x, y2, 'g-.', x, 0 * x, 'b-')
+
+# 装饰图形
+plt.xlim(0, 7)
+plt.ylim(-1.1, 1.1)
+
+plt.xlabel('收入')
+plt.ylabel('利润')
+
+# 显示图形
+plt.show()
+```
+
+    [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
+     1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.  3.1 3.2 3.3 3.4 3.5
+     3.6 3.7 3.8 3.9 4.  4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.  5.1 5.2 5.3
+     5.4 5.5 5.6 5.7 5.8 5.9 6.  6.1 6.2]
+    [ 0.          0.09983342  0.19866933  0.29552021  0.38941834  0.47942554
+      0.56464247  0.64421769  0.71735609  0.78332691  0.84147098  0.89120736
+      0.93203909  0.96355819  0.98544973  0.99749499  0.9995736   0.99166481
+      0.97384763  0.94630009  0.90929743  0.86320937  0.8084964   0.74570521
+      0.67546318  0.59847214  0.51550137  0.42737988  0.33498815  0.23924933
+      0.14112001  0.04158066 -0.05837414 -0.15774569 -0.2555411  -0.35078323
+     -0.44252044 -0.52983614 -0.61185789 -0.68776616 -0.7568025  -0.81827711
+     -0.87157577 -0.91616594 -0.95160207 -0.97753012 -0.993691   -0.99992326
+     -0.99616461 -0.98245261 -0.95892427 -0.92581468 -0.88345466 -0.83226744
+     -0.77276449 -0.70554033 -0.63126664 -0.55068554 -0.46460218 -0.37387666
+     -0.2794155  -0.1821625  -0.0830894 ]
+
+
+
+    
+![png](python_files/python_94_1.png)
+    
+
+
+- 35.4 散点图
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.rcParams['font.sans-serif'] = ['Sarasa UI SC']
+plt.rcParams['axes.unicode_minus'] = False
+
+x1 = np.random.normal(2, 1.2, 500)
+y1 = np.random.normal(2, 1.2, 500)
+
+x2 = np.random.normal(10, 1.2, 500)
+y2 = np.random.normal(10, 1.2, 500)
+
+x3 = np.random.normal(15, 1.2, 500)
+y3 = np.random.normal(15, 1.2, 500)
+
+# 绘制图形
+plt.scatter(x1, y1, c='r', label='A')
+plt.scatter(x2, y2, c='y', label='B')
+plt.scatter(x3, y3, c='b', label='C')
+
+# 装饰图形
+plt.legend(loc='best')
+plt.axis('off')
+
+plt.show()
+```
+
+
+    
+![png](python_files/python_96_0.png)
+    
+
+
+- 35.5 一个画面中展示多图
+
+
+```python
+"""
+功能：在一个画布中产生多个坐标系，、
+       展示多图
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+import pandas as pd
+
+plt.rcParams['font.sans-serif'] = ['Sarasa UI SC']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 产生画布
+figure = plt.figure()
+ax1 = figure.add_subplot(1, 2, 1)
+
+# 2 产生数据
+x = np.arange(0, 2 * math.pi, 0.1)
+y = np.sin(x)
+y2 = np.cos(x)
+print(x)
+print(y)
+# 绘制线图
+plt.plot(x, y, 'r-.', x, y2, 'g-.', x, 0 * x, 'b-')
+# 装饰图形
+plt.xlim(0, 7)
+plt.ylim(-1.1, 1.1)
+
+plt.xlabel('收入')
+plt.ylabel('利润')
+
+ax2 = figure.add_subplot(1, 2, 2)
+
+x1 = np.random.normal(2, 1.2, 500)
+y1 = np.random.normal(2, 1.2, 500)
+
+x2 = np.random.normal(10, 1.2, 500)
+y2 = np.random.normal(10, 1.2, 500)
+
+x3 = np.random.normal(15, 1.2, 500)
+y3 = np.random.normal(15, 1.2, 500)
+
+# 绘制图形
+plt.scatter(x1, y1, c='r', label='A类')
+plt.scatter(x2, y2, c='y', label='B类')
+plt.scatter(x3, y3, c='b', label='C类')
+
+# 装饰图形
+plt.legend(loc='best')
+plt.axis('off')
+plt.show()
+
+```
+
+    [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.  1.1 1.2 1.3 1.4 1.5 1.6 1.7
+     1.8 1.9 2.  2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.  3.1 3.2 3.3 3.4 3.5
+     3.6 3.7 3.8 3.9 4.  4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 5.  5.1 5.2 5.3
+     5.4 5.5 5.6 5.7 5.8 5.9 6.  6.1 6.2]
+    [ 0.          0.09983342  0.19866933  0.29552021  0.38941834  0.47942554
+      0.56464247  0.64421769  0.71735609  0.78332691  0.84147098  0.89120736
+      0.93203909  0.96355819  0.98544973  0.99749499  0.9995736   0.99166481
+      0.97384763  0.94630009  0.90929743  0.86320937  0.8084964   0.74570521
+      0.67546318  0.59847214  0.51550137  0.42737988  0.33498815  0.23924933
+      0.14112001  0.04158066 -0.05837414 -0.15774569 -0.2555411  -0.35078323
+     -0.44252044 -0.52983614 -0.61185789 -0.68776616 -0.7568025  -0.81827711
+     -0.87157577 -0.91616594 -0.95160207 -0.97753012 -0.993691   -0.99992326
+     -0.99616461 -0.98245261 -0.95892427 -0.92581468 -0.88345466 -0.83226744
+     -0.77276449 -0.70554033 -0.63126664 -0.55068554 -0.46460218 -0.37387666
+     -0.2794155  -0.1821625  -0.0830894 ]
+
+
+
+    
+![png](python_files/python_98_1.png)
+    
+
+
+- 35.6 地图数据可视化
+
+
+```python
+"""
+程序功能: 将疫情数据可视化地图
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+# 导入可视化工具模块
+import json
+import pandas as pd
+
+# 读取json文件
+with open("./files/disease.json", "r", encoding="utf-8") as f:
+    disease = json.load(f)
+
+print(disease)
+
+# 读取各个省份的数据
+provinceData = pd.DataFrame(disease)
+print(provinceData['name'])
+
+# 获取每个省的确认病例人数
+data1 = pd.DataFrame(list(provinceData['total']))
+print(data1)
+
+data1['name'] = provinceData['name']
+print(data1)
+
+showData = data1[['name', 'confirm']].values
+
+print(showData)
+
+# 地图绘图pyecharts
+from pyecharts import options as opts
+from pyecharts.charts import Map
+
+# 创建echart  对象
+c = (
+    Map()
+        .add('确诊病例数', showData, 'china')
+        .set_global_opts(title_opts=opts.TitleOpts(title="全国疫情地图"))
+)
+
+c.render("./files/disease.html")
+```
+
+![全国疫情地图](./images/全国疫情地图.png)
 
 ## 题型
 
