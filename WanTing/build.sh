@@ -28,7 +28,7 @@ sed -i '' '2i\
 sed -i '' 's/\\title{python}/\\title{黄师姐 Python 秘籍}/g' python.tex
 
 # Generate PDF
-xelatex python.tex > python.pdf
+xelatex python.tex
 
 # cleanup
 rm python.log python.out python.aux
