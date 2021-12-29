@@ -41,7 +41,7 @@ brew install font-sarasa-gothic
 3. Convert tex to pdf
 
     ```shell
-    xelatex notebook-to-convert.tex > notebook-to-convert.pdf
+    xelatex notebook-to-convert.tex
     ```
 
 ## Shell Script Helper
