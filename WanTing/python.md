@@ -2,7 +2,7 @@
 
 ## 知识点
 
-**1\. Python程序需要 _描述数据_ 和 _操作数据_**
+**1\. Python程序需要描述数据和操作数据**
 
 **2\. Python程序区分大小写**
 
@@ -10,7 +10,7 @@
 
 **3\. 标识符的基本要求**
 
-  - 驼峰法则(`camelCase`) / 匈牙利法则(`Hungarian notation`)
+  - 驼峰法则(camelCase) / 匈牙利法则(Hungarian notation)
   - 例如:
     - `iPhone`
     - `eBay`
@@ -28,8 +28,10 @@
 
 **5\. 注意`=`与`==`的区别**
 
-  - 赋值运算符(`=`) - `a = 10` 把`10`赋给变量`a`。
-  - 比较运算符(`==`) - `a == 10` 比较`a`和`10`是否相等，相等返回`True`，不相等返回`False`。
+  - 赋值运算符(`=`)
+    - `a = 10` 把`10`赋给变量`a`。
+  - 比较运算符(`==`)
+    - `a == 10` 比较`a`和`10`是否相等，相等返回`True`，否则返回`False`。
 
 **6\. 特殊字符换行符`\n`**
 
@@ -69,7 +71,7 @@ print(True, 1, 3.14, 1+2j, 'hello', sep=', ')
 
 **7\. Python语法的缩进格式(严格的逻辑关系、语句块)**
 
-> Guido van Rossum 认为使用缩进进行分组非常优雅，并且对提高普通 Python 程序的清晰度有很大贡献。 大多数人会在一段时间后学会喜欢这个功能。
+_Guido van Rossum 认为使用缩进进行分组非常优雅，并且对提高普通 Python 程序的清晰度有很大贡献。 大多数人会在一段时间后学会喜欢这个功能。_
 
 
 ```python
@@ -140,12 +142,18 @@ print(1231+999999)                # 整数相加
 print('Hello' + ' ' + 'World!')   # 字符串拼接
 print([1, 3, 7] + [5, 7, 9, 11])  # 列表拼接
 print((1, 3, 7) + (5, 7, 9, 11))  # 元组拼接
+
+# 注意集合和字典的拼接操作符是 `|`
+print({1, 3, 5} | {5, 7, 9})
+print({1: 'one', 3: 'three', 5: 'five'} | {5: 'five', 7: 'seven', 9: 'nine'})
 ```
 
     1001230
     Hello World!
     [1, 3, 7, 5, 7, 9, 11]
     (1, 3, 7, 5, 7, 9, 11)
+    {1, 3, 5, 7, 9}
+    {1: 'one', 3: 'three', 5: 'five', 7: 'seven', 9: 'nine'}
 
 
 
@@ -379,8 +387,7 @@ print(a, b, c, d, e, f, g, h, i, j, k, l, sep = '\n')
 
 **13\. 字符串方法 - `split()`（只要求能读懂程序）**
 
-  - `str.split(sep=None, maxsplit=- 1)`
-    > 返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 如果给出了 maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1 个元素）。 如果 maxsplit 未指定或为 -1，则不限制拆分次数（进行所有可能的拆分）。
+  - `str.split(sep=None, maxsplit=-1)` - 返回一个由字符串内单词组成的列表，使用 sep 作为分隔字符串。 如果给出了 maxsplit，则最多进行 maxsplit 次拆分（因此，列表最多会有 maxsplit+1 个元素）。 如果 maxsplit 未指定或为 -1，则不限制拆分次数（进行所有可能的拆分）。
 
 
 ```python
@@ -537,6 +544,19 @@ else:
 | `x and y` | if x is false, then x, else y        |
 | `not x`   | if x is false, then True, else False |
 
+
+```python
+a = not True
+b = not True and True
+c = True and True
+d = True and False or True
+e = True and True or False
+print(a, b, c, d, e)
+```
+
+    False False True True True
+
+
 - 15.2 比较运算
 
 | 运算     | 含意           |
@@ -550,7 +570,7 @@ else:
 | `is`     | 对象标识       |
 | `is not` | 否定的对象标识 |
 
-**16\. 循环语句中可迭代的结构：range、字符串、列表、元组、集合、字典、文件**
+**16\. 循环语句中可迭代的结构: range、字符串、列表、元组、集合、字典、文件**
 
   - range 类型表示不可变的数字序列，通常用于在 for 循环中循环指定的次数。
     ```python
@@ -676,21 +696,27 @@ print(sorted(filmRatingDict.items(), key = lambda x: -x[1])[0:3])
 **19\. 元组的非正规写法**
 
   - 多变量赋值
-  - 两变量值交换
 
 
 ```python
 # 多变量赋值
 a, b, (c, d), e = 1, 3, (5, 7), 9
 print(a, b, c, d, e, sep = ', ')
+```
 
+    1, 3, 5, 7, 9
+
+
+  - 两变量值交换
+
+
+```python
 # 两变量值交换
 x, y = 'hello', 'world'
 x, y = y, x
 print(x, y)
 ```
 
-    1, 3, 5, 7, 9
     world hello
 
 
@@ -711,12 +737,12 @@ foreignGirls = girls - chinese
 print(singers, chineseBoys, foreignGirls, sep = '\n')
 ```
 
-    {'Adele', 'Justin Bieber', 'Lady Gaga', 'Ed Sheeran', 'G.E.M', 'Jay Zhou'}
+    {'G.E.M', 'Adele', 'Justin Bieber', 'Lady Gaga', 'Jay Zhou', 'Ed Sheeran'}
     {'Jay Zhou'}
-    {'Adele', 'Lady Gaga'}
+    {'Lady Gaga', 'Adele'}
 
 
-**22\. 集合操作的方法：`add()`**
+**22\. 集合操作的方法: `add()`**
 
 
 ```python
@@ -725,7 +751,7 @@ girls.add('WanTing')
 print(girls)
 ```
 
-    {'Adele', 'G.E.M', 'WanTing', 'Lady Gaga'}
+    {'G.E.M', 'Lady Gaga', 'WanTing', 'Adele'}
 
 
 **23\. 集合的去除重复工作**
@@ -750,7 +776,7 @@ for e in l:
 print(unique)
 ```
 
-    ['o', 'm', ',', 'l', '!', 'e', 'y', ' ', 'd', 'r', 'i', 'w', 'g', 'H']
+    [' ', 'i', 'g', 'o', 'l', 'H', ',', 'e', 'd', 'w', '!', 'm', 'y', 'r']
     ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
 
 
@@ -804,7 +830,7 @@ for k, v in d.items():
 
 ```python
 """
-  程序功能：实现词频的统计
+  程序功能: 实现词频的统计
 """
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt  # 绘制图像的模块
@@ -834,8 +860,8 @@ plt.show()
 ```
 
     Building prefix dict from the default dictionary ...
-    Loading model from cache /var/folders/p9/ym64x6r96qbbcfswwvcnnn5m0000gn/T/jieba.cache
-    Loading model cost 0.706 seconds.
+    Loading model from cache /var/folders/pc/w3pn_xmd7cq95rjmlc30bj540000gn/T/jieba.cache
+    Loading model cost 0.660 seconds.
     Prefix dict has been built successfully.
 
 
@@ -844,14 +870,13 @@ plt.show()
 
 
     
-![png](python_files/python_66_2.png)
+![png](python_files/python_69_2.png)
     
 
 
 **26\. 字典的`get()`方法的作用及使用**
 
-  - `get(key[, default])`
-  > 如果 key 存在于字典中则返回 key 的值，否则返回 default。 如果 default 未给出则默认为 None，因而此方法绝不会引发 KeyError。
+  - `get(key[, default])` - 如果 key 存在于字典中则返回 key 的值，否则返回 default。 如果 default 未给出则默认为 None，因而此方法绝不会引发 KeyError。
 
 
 ```python
@@ -894,96 +919,6 @@ fib(2000)
 pip list
 ```
 
-    Package              Version
-    -------------------- ---------
-    appdirs              1.4.4
-    appnope              0.1.2
-    argon2-cffi          21.3.0
-    argon2-cffi-bindings 21.2.0
-    attrs                21.2.0
-    autopep8             1.5.7
-    backcall             0.2.0
-    black                21.9b0
-    bleach               4.1.0
-    cffi                 1.15.0
-    click                8.0.1
-    cycler               0.11.0
-    debugpy              1.5.0
-    decorator            5.1.0
-    defusedxml           0.7.1
-    entrypoints          0.3
-    fonttools            4.28.5
-    importlib-metadata   4.10.0
-    ipykernel            6.4.1
-    ipython              7.28.0
-    ipython-genutils     0.2.0
-    jedi                 0.18.0
-    jieba                0.42.1
-    Jinja2               3.0.3
-    jsonschema           4.3.2
-    jupyter-client       7.0.6
-    jupyter-core         4.8.1
-    jupyterlab-pygments  0.1.2
-    kiwisolver           1.3.2
-    MarkupSafe           2.0.1
-    matplotlib           3.5.1
-    matplotlib-inline    0.1.3
-    mistune              0.8.4
-    mypy-extensions      0.4.3
-    nbclient             0.5.9
-    nbconvert            6.3.0
-    nbformat             5.1.3
-    nest-asyncio         1.5.1
-    notebook             6.4.6
-    numpy                1.21.5
-    packaging            21.3
-    pandas               1.3.5
-    pandocfilters        1.5.0
-    parso                0.8.2
-    pathspec             0.9.0
-    pexpect              4.8.0
-    pickleshare          0.7.5
-    Pillow               8.4.0
-    pip                  21.3.1
-    platformdirs         2.3.0
-    prettytable          2.5.0
-    prometheus-client    0.12.0
-    prompt-toolkit       3.0.20
-    ptyprocess           0.7.0
-    pycodestyle          2.8.0
-    pycparser            2.21
-    pyecharts            1.9.1
-    pyee                 8.2.2
-    Pygments             2.10.0
-    pyparsing            3.0.6
-    pyppeteer            0.2.6
-    pyrsistent           0.18.0
-    python-dateutil      2.8.2
-    pytz                 2021.3
-    pyzmq                22.3.0
-    regex                2021.8.28
-    Send2Trash           1.8.0
-    setuptools           59.0.1
-    simplejson           3.17.6
-    six                  1.16.0
-    terminado            0.12.1
-    testpath             0.5.0
-    toml                 0.10.2
-    tomli                1.2.1
-    tornado              6.1
-    tqdm                 4.62.3
-    traitlets            5.1.0
-    typing-extensions    3.10.0.2
-    urllib3              1.26.7
-    wcwidth              0.2.5
-    webencodings         0.5.1
-    websockets           9.1
-    wheel                0.37.0
-    wordcloud            1.8.1
-    zipp                 3.6.0
-    Note: you may need to restart the kernel to use updated packages.
-
-
 
 ```python
 pip install pandas
@@ -999,10 +934,10 @@ pip install pandas
 
   - `read()` - 打开 file 并返回对应的 file object。
   - `readlines()` - 从流中读取并返回包含多行的列表。
-  - 对文件对象的迭代默认情况是`readlines()`
+    - 对文件对象的迭代默认情况是`readlines()`
     - 请注意使用 `for line in file: ...` 就足够对文件对象进行迭代了，可以不必调用 `file.readlines()`。
 
-**31\. 写文本文件的方法：`writelines()`**
+**31\. 写文本文件的方法: `writelines()`**
 
 
 ```python
@@ -1029,27 +964,27 @@ print(f.closed)
     True
 
 
-- `for line in file: ...`
+- `with open(...) as file`
 
 
 ```python
-with open('./files/test.txt', 'r') as file1:  # 上下文管理器
+with open('./files/test.txt', 'r') as file:  # 上下文管理器
     # 一次性读取整个文件
     print("read() 方法的结果.....")
-    print(type(file1.read()))
-    file1.seek(0)  # 将文件定位于文件头 1代表当前位置 ，2代表文件结尾
-    print(file1.read())
+    print(type(file.read()))
+    file.seek(0)  # 将文件定位于文件头 1代表当前位置 ，2代表文件结尾
+    print(file.read())
 
     # 按行读取文件
     print("readline() 方法的结果.....")
-    file1.seek(0)
-    print(type(file1.readline()))
-    print(file1.readline())
+    file.seek(0)
+    print(type(file.readline()))
+    print(file.readline())
 
     # 以列表方式读入数据
     print("以列表方式读入数据")
-    file1.seek(0)
-    lines = file1.readlines()
+    file.seek(0)
+    lines = file.readlines()
     print(type(lines))
     print(lines)
     print(len(lines))
@@ -1075,8 +1010,8 @@ with open('./files/test.txt', 'r') as file1:  # 上下文管理器
 
 
 ```python
-with open('./files/test.txt', 'r') as f:
-    for line in f:
+with open('./files/test.txt', 'r') as file:
+    for line in file:
         print(line, end = '')
 ```
 
@@ -1116,7 +1051,7 @@ os.remove(filename)
     《花樣年華》
 
 
-**32\. CSV库，JSON库读写文件操作的基本语法**
+**32\. CSV库和JSON库读写文件操作的基本语法**
 
 
 ```python
@@ -1140,7 +1075,6 @@ with open('./files/test.csv', 'a+') as f:
     writer = csv.writer(f, lineterminator='\n')
     for item in blist:
         writer.writerow(item)
-
 ```
 
     # 按文本方式读取csv文件
@@ -1175,9 +1109,9 @@ with open('./files/beijing_aqi.json', 'r', encoding='utf-8') as fp:
 
 **33\. 上下文管理器的应用**
 
-  - `with open() as f:` - 参见 29-31 知识点代码
+  - `with open(...) as file:` - 参见 29-31 知识点代码
 
-**34\. 第三方库random的方法：`randint()`**
+**34\. 第三方库random的方法: `randint()`**
 
 
 ```python
@@ -1229,7 +1163,7 @@ plt.show()
 
 
     
-![png](python_files/python_90_0.png)
+![png](python_files/python_93_0.png)
     
 
 
@@ -1259,7 +1193,7 @@ plt.show()
 
 
     
-![png](python_files/python_92_0.png)
+![png](python_files/python_95_0.png)
     
 
 
@@ -1315,7 +1249,7 @@ plt.show()
 
 
     
-![png](python_files/python_94_1.png)
+![png](python_files/python_97_1.png)
     
 
 
@@ -1339,9 +1273,9 @@ x3 = np.random.normal(15, 1.2, 500)
 y3 = np.random.normal(15, 1.2, 500)
 
 # 绘制图形
-plt.scatter(x1, y1, c='r', label='A')
-plt.scatter(x2, y2, c='y', label='B')
-plt.scatter(x3, y3, c='b', label='C')
+plt.scatter(x1, y1, c='r', label='A类')
+plt.scatter(x2, y2, c='y', label='B类')
+plt.scatter(x3, y3, c='b', label='C类')
 
 # 装饰图形
 plt.legend(loc='best')
@@ -1352,7 +1286,7 @@ plt.show()
 
 
     
-![png](python_files/python_96_0.png)
+![png](python_files/python_99_0.png)
     
 
 
@@ -1361,8 +1295,7 @@ plt.show()
 
 ```python
 """
-功能：在一个画布中产生多个坐标系，、
-       展示多图
+功能: 在一个画布中产生多个坐标系，展示多图
 """
 import matplotlib.pyplot as plt
 import numpy as np
@@ -1433,7 +1366,7 @@ plt.show()
 
 
     
-![png](python_files/python_98_1.png)
+![png](python_files/python_101_1.png)
     
 
 
@@ -1493,11 +1426,11 @@ c.render("./files/disease.html")
 
 所有选择题和判断题均出自砺儒云平台的课前、课后测试题，只有个别题目做了适当修改
 
-| #   | 题型                 | 分数 |
-| --- | -------------------- | ---- |
-| 1   | 选择题               | 10x2 |
-| 2   | 判断题               | 15x1 |
-| 3   | 程序分析题           | 5x5  |
-| 4   | 应用题（程序填空）   | 10x2 |
-| 5   | 思维提升题（问答题） | 2x5  |
-| 6   | 应用创新题（编程题） | 1x10 |
+| #   | 题型                 |   分数 |
+| --- | -------------------- | :----: |
+| 1   | 选择题               | `10x2` |
+| 2   | 判断题               | `15x1` |
+| 3   | 程序分析题           |  `5x5` |
+| 4   | 应用题（程序填空）   | `10x2` |
+| 5   | 思维提升题（问答题） |  `2x5` |
+| 6   | 应用创新题（编程题） | `1x10` |
