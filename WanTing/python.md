@@ -103,26 +103,58 @@ print(s)
 
 **9\. 格式化输出`print()`的应用，包括宽度、小数点后位数等。**
 
+`{[参数名称或索引]:[对齐][最小宽度].[精度]}`
+
+- 参数名或索引
+
+
+```python
+print('{0}, {1}, {2}'.format('a', 'b', 'c'))
+print('Coordinates: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W'))
+```
+
+    a, b, c
+    Coordinates: 37.24N, -115.81W
+
+
+- 对齐
+
 
 ```python
 print('1        10        20        30')
 print('----+----|----+----|----+----|')
-print(f'{3.1415926535897932384626:30.8}')
-print(f'{3.1415926535897932384626:<30.8}')
-print('     1        10        20        30')
-print('     ----+----|----+----|----+----|')
-print('Pi = {:30.8}'.format(3.1415926535897932384626))
-print('Pi = {:<30.8}'.format(3.1415926535897932384626))
+print('{:<30}'.format('left aligned'))
+print('{:>30}'.format('right aligned'))
+print('{:^30}'.format('centered'))
 ```
 
     1        10        20        30
     ----+----|----+----|----+----|
+    left aligned                  
+                     right aligned
+               centered           
+
+
+- 最小宽度和精度
+
+
+```python
+print('1        10        20        30')
+print('----+----|----+----|----+----|')
+print('{0:10}'.format('Guten Morgen'))
+print('{0:10.5}'.format('Guten Morgen'))
+print('{:30.8}'.format(3.1415926535897932384626))
+print('{:<30.8}'.format(3.1415926535897932384626))
+print('{:<30.8f}'.format(3.1415926535897932384626))
+```
+
+    1        10        20        30
+    ----+----|----+----|----+----|
+    Guten Morgen
+    Guten     
                          3.1415927
     3.1415927                     
-         1        10        20        30
-         ----+----|----+----|----+----|
-    Pi =                      3.1415927
-    Pi = 3.1415927                     
+    3.14159265                    
 
 
 **10\. 各种运算符**
@@ -737,9 +769,9 @@ foreignGirls = girls - chinese
 print(singers, chineseBoys, foreignGirls, sep = '\n')
 ```
 
-    {'G.E.M', 'Adele', 'Justin Bieber', 'Lady Gaga', 'Jay Zhou', 'Ed Sheeran'}
+    {'Ed Sheeran', 'Justin Bieber', 'Adele', 'G.E.M', 'Jay Zhou', 'Lady Gaga'}
     {'Jay Zhou'}
-    {'Lady Gaga', 'Adele'}
+    {'Adele', 'Lady Gaga'}
 
 
 **22\. 集合操作的方法: `add()`**
@@ -751,7 +783,7 @@ girls.add('WanTing')
 print(girls)
 ```
 
-    {'G.E.M', 'Lady Gaga', 'WanTing', 'Adele'}
+    {'WanTing', 'Adele', 'G.E.M', 'Lady Gaga'}
 
 
 **23\. 集合的去除重复工作**
@@ -776,7 +808,7 @@ for e in l:
 print(unique)
 ```
 
-    [' ', 'i', 'g', 'o', 'l', 'H', ',', 'e', 'd', 'w', '!', 'm', 'y', 'r']
+    ['l', ',', 'i', 'o', 'y', 'd', ' ', '!', 'e', 'g', 'H', 'r', 'm', 'w']
     ['H', 'e', 'l', 'o', ' ', 'w', 'r', 'd', ',', 'm', 'y', 'g', 'i', '!']
 
 
@@ -860,8 +892,8 @@ plt.show()
 ```
 
     Building prefix dict from the default dictionary ...
-    Loading model from cache /var/folders/pc/w3pn_xmd7cq95rjmlc30bj540000gn/T/jieba.cache
-    Loading model cost 0.660 seconds.
+    Dumping model to file cache /var/folders/pc/w3pn_xmd7cq95rjmlc30bj540000gn/T/jieba.cache
+    Loading model cost 0.792 seconds.
     Prefix dict has been built successfully.
 
 
@@ -870,7 +902,7 @@ plt.show()
 
 
     
-![png](python_files/python_69_2.png)
+![png](python_files/python_73_2.png)
     
 
 
@@ -1163,7 +1195,7 @@ plt.show()
 
 
     
-![png](python_files/python_93_0.png)
+![png](python_files/python_97_0.png)
     
 
 
@@ -1193,7 +1225,7 @@ plt.show()
 
 
     
-![png](python_files/python_95_0.png)
+![png](python_files/python_99_0.png)
     
 
 
@@ -1249,7 +1281,7 @@ plt.show()
 
 
     
-![png](python_files/python_97_1.png)
+![png](python_files/python_101_1.png)
     
 
 
@@ -1286,7 +1318,7 @@ plt.show()
 
 
     
-![png](python_files/python_99_0.png)
+![png](python_files/python_103_0.png)
     
 
 
@@ -1366,7 +1398,7 @@ plt.show()
 
 
     
-![png](python_files/python_101_1.png)
+![png](python_files/python_105_1.png)
     
 
 
